@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://magichear.github.io/study/docs/electromagnetism/</loc>
+    
+    <lastmod>2023-10-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://magichear.github.io/study/2023/10/09/%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%E4%B8%BA%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/</loc>
+    
+    <lastmod>2023-10-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://magichear.github.io/study/</loc>
     
     <lastmod>2023-10-09</lastmod>
