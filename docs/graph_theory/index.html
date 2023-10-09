@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   定义定义 1.2 给定无向图 G，v∈V(G)是 G 的一个顶点，v 的度数 deg(v)定义为$$deg(v) &#x3D; d_1(v) + 2\times l(v)$$其中，$d_1(v)$为 v 关联的非环边">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/graph_theory/">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   定义定义 1.2 给定无向图 G，v∈V(G)是 G 的一个顶点，v 的度数 deg(v)定义为$$deg(v) &#x3D; d_1(v) + 2\times l(v)$$其中，$d_1(v)$为 v 关联的非环边">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-09T12:13:09.641Z">
+<meta property="article:modified_time" content="2023-10-09T12:13:09.641Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/graph_theory/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/graph_theory/","path":"docs/graph_theory/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1-2"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义 1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1-7"><span class="nav-number">1.0.2.</span> <span class="nav-text">定义 1.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1-9"><span class="nav-number">1.0.3.</span> <span class="nav-text">定义 1.9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1-10"><span class="nav-number">1.0.4.</span> <span class="nav-text">定义 1.10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.0.5.</span> <span class="nav-text">最短路径问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2-1"><span class="nav-number">1.0.6.</span> <span class="nav-text">定义 2.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2-2"><span class="nav-number">1.0.7.</span> <span class="nav-text">定义 2.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2-3"><span class="nav-number">1.0.8.</span> <span class="nav-text">定义 2.3</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1-1"><span class="nav-number">2.0.1.</span> <span class="nav-text">定理 1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%AE%BA-1-1"><span class="nav-number">2.0.2.</span> <span class="nav-text">推论 1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1-2"><span class="nav-number">2.0.3.</span> <span class="nav-text">定理 1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-1-3"><span class="nav-number">2.0.4.</span> <span class="nav-text">定理 1.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-2-1"><span class="nav-number">2.0.5.</span> <span class="nav-text">定理 2.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-2-2"><span class="nav-number">2.0.6.</span> <span class="nav-text">定理 2.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86-2-3"><span class="nav-number">2.0.7.</span> <span class="nav-text">定理 2.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%AE%BA-2-2"><span class="nav-number">2.0.8.</span> <span class="nav-text">推论 2.2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95-1-1"><span class="nav-number">3.0.1.</span> <span class="nav-text">算法 1.1</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-2"><span class="nav-number">4.0.1.</span> <span class="nav-text">例 1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-3"><span class="nav-number">4.0.2.</span> <span class="nav-text">例 1.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-5"><span class="nav-number">4.0.3.</span> <span class="nav-text">例 $1.5^*$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-6"><span class="nav-number">4.0.4.</span> <span class="nav-text">例 1.6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-8-Delta"><span class="nav-number">4.0.5.</span> <span class="nav-text">例 $1.8^\Delta$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-9"><span class="nav-number">4.0.6.</span> <span class="nav-text">例 1.9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-10-Delta"><span class="nav-number">4.0.7.</span> <span class="nav-text">例 $1.10^\Delta$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-1-11"><span class="nav-number">4.0.8.</span> <span class="nav-text">例 $1.11^*$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B-2-2"><span class="nav-number">4.0.9.</span> <span class="nav-text">例 2.2</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:mgchrzio1@proton.me" title="E-Mail → mailto:mgchrzio1@proton.me" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com" rel="noopener" target="_blank">Title</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-git"><a href="/study/docs/git/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Git</a></li>
+
+
+      
+  <li class="menu-item menu-item-图论"><a href="/study/docs/graph_theory/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>图论</a></li>
+
+
+      
+  <li class="menu-item menu-item-常用快捷键"><a href="/study/docs/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>常用快捷键</a></li>
+
+
+      
+  <li class="menu-item menu-item-作业"><a href="/study/docs/homework/" rel="section"><i class="fa fa-puzzle-th fa-fw"></i>作业</a></li>
+
+
+    </ul>
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+          <li>图论</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+});
+</script>
+
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><h3 id="定义-1-2"><a href="#定义-1-2" class="headerlink" title="定义 1.2"></a>定义 1.2</h3><blockquote>
+<p>给定无向图 G，v∈V(G)是 G 的一个顶点，v 的度数 deg(v)定义为$$deg(v) &#x3D; d_1(v) + 2\times l(v)$$其中，$d_1(v)$为 v 关联的非环边数，$l(v)$为关联的环边数</p>
+</blockquote>
+<blockquote>
+<p>最小度数$$\delta(G) &#x3D; \underset{v \in V(G)}{min} deg(v)$$<br>最大度数$$\Delta(G) &#x3D; \underset{v \in V(G)}{max} deg(v)$$</p>
+</blockquote>
+<blockquote>
+<p>度数序列：将图 G 中所有顶点的度数按照从大到小的顺序排列</p>
+</blockquote>
+<h3 id="定义-1-7"><a href="#定义-1-7" class="headerlink" title="定义 1.7"></a>定义 1.7</h3><blockquote>
+<p>$行迹：边不重复的路径$<br>$轨道：顶点不重复的路径$<br>$回路：起点和终点相同的路径$<br>$圈：除了起点与终点相同外，没有相同顶点的回路$<br>$连通：顶点u与v之间存在路径$<br>$距离：顶点u与v之间最短轨道的长度$</p>
+</blockquote>
+<blockquote>
+<p>$w$为图 G 的连通片的个数</p>
+</blockquote>
+<h3 id="定义-1-9"><a href="#定义-1-9" class="headerlink" title="定义 1.9"></a>定义 1.9</h3><blockquote>
+<p>同构$\quad \rightarrow \quad $两图的顶点数量、对应关系完全相同</p>
+</blockquote>
+<h3 id="定义-1-10"><a href="#定义-1-10" class="headerlink" title="定义 1.10"></a>定义 1.10</h3><blockquote>
+<p>有向图用 D 表示<br>入度： $deg^-(u)$，表示以 u 为终点的边数<br>出度： $deg^+(u)$，表示以 u 为起点的边数</p>
+</blockquote>
+<h3 id="最短路径问题"><a href="#最短路径问题" class="headerlink" title="最短路径问题"></a>最短路径问题</h3><blockquote>
+<p>$P(u,v)$的权$$w(P(u,v)) &#x3D; \underset{e \in E(P(u,v))}{\sum} w(e)$$<br>最短路径$$P_0(u,v)$$ 此时$u,v$之间的距离$$w(P_0(u,v))$$ $\qquad\qquad\qquad\qquad\qquad$ 记作 $\qquad \quad$ $dist(u,v)$</p>
+</blockquote>
+<h3 id="定义-2-1"><a href="#定义-2-1" class="headerlink" title="定义 2.1"></a>定义 2.1</h3><blockquote>
+<p>树：连通无圈图<br>树叶：树中度数为 1 的顶点<br>分支点：度数大于 1 的顶点<br>森林：每个连通片都是树的非连通图<br>平凡树：孤立点</p>
+</blockquote>
+<blockquote>
+<p><em>断言</em> $$若G是连通图，则\varepsilon(G) \ge v(G) - 1$$</p>
+</blockquote>
+<h3 id="定义-2-2"><a href="#定义-2-2" class="headerlink" title="定义 2.2"></a>定义 2.2</h3><blockquote>
+<p>设图$G &#x3D; (V,E)$是连通图，任取$v \in V$称$$顶点v的离心率：l(v) &#x3D; max{dist(u,v)|u \in V}$$ $$图G的半径：r(G) &#x3D; min{l(v)|v \in V }$$ $$中心点：离心率恰好等于半径的顶点$$ $$G的中心：G中全体中心点的集合$$</p>
+</blockquote>
+<blockquote>
+<p><em>推论</em> $$每棵树的中心是由一个顶点或两个相邻顶点构成的$$见课本习题 6</p>
+</blockquote>
+<h3 id="定义-2-3"><a href="#定义-2-3" class="headerlink" title="定义 2.3"></a>定义 2.3</h3><blockquote>
+<p>图$G$的生成子图$T$是树 $\qquad \rightarrow \qquad $ $T$是$G$的一棵生成树<br>图$G$的生成子图$T$是森林 $\qquad \rightarrow \qquad $ 称$T$为$G$的生成森林<br>生成树的边 $\qquad \rightarrow \qquad $ 树枝<br>图$G$中非生成树的边 $\qquad \rightarrow \qquad $ 弦<br>$T$相对于$G$的补图${T^c}_G$ $\qquad \rightarrow \qquad $ $G$的余树</p>
+</blockquote>
+<blockquote>
+<p>余树未必连通，也不一定不含圈 $\qquad \rightarrow \qquad $ 余树不一定是树</p>
+</blockquote>
+<p>————————————————————————————————————————————</p>
+<h1 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h1><h3 id="定理-1-1"><a href="#定理-1-1" class="headerlink" title="定理 1.1"></a>定理 1.1</h3><blockquote>
+<p>（Euler&#x2F;握手定理）$$\underset{v \in V(G)}{\sum} deg(v) &#x3D; 2\varepsilon(G)$$</p>
+</blockquote>
+<h3 id="推论-1-1"><a href="#推论-1-1" class="headerlink" title="推论 1.1"></a>推论 1.1</h3><blockquote>
+<p>任给图 G，G 中度数为奇数的顶点个数为偶数</p>
+</blockquote>
+<h3 id="定理-1-2"><a href="#定理-1-2" class="headerlink" title="定理 1.2"></a>定理 1.2</h3><blockquote>
+<p>$图G为二分图，当且仅当G中无奇圈$</p>
+</blockquote>
+<h3 id="定理-1-3"><a href="#定理-1-3" class="headerlink" title="定理 1.3"></a>定理 1.3</h3><blockquote>
+<p>任给有向图 D$$\underset{v \in V(D)}{\sum} deg^+(v) &#x3D; \underset{v \in V(D)}{\sum} deg^-(v) &#x3D; \varepsilon(D)$$</p>
+</blockquote>
+<blockquote>
+<p>给定 D 中两个顶点$u,v \in V(D)$，若存在从$u$到$v$的有向路径，则称$u$<strong><em>可达</em></strong>$v$</p>
+</blockquote>
+<h3 id="定理-2-1"><a href="#定理-2-1" class="headerlink" title="定理 2.1"></a>定理 2.1</h3><blockquote>
+<p>设$G &#x3D; (V(G),E(G))$是简单无向图，则以下命题等价：</p>
+<ol>
+<li>$G$是树</li>
+<li>$G$的任意两个顶点之间有且仅有一条轨道</li>
+<li>$G$不含圈，且$\varepsilon(G) &#x3D; v(G) - 1$</li>
+<li>$G$是连通图，且$\varepsilon(G) &#x3D; v(G) - 1$</li>
+<li>$G$是连通图，且删去任意一条边后都不连通</li>
+<li>$G$不含圈，且任意添加一条边后恰好含一个圈</li>
+</ol>
+</blockquote>
+<h3 id="定理-2-2"><a href="#定理-2-2" class="headerlink" title="定理 2.2"></a>定理 2.2</h3><blockquote>
+<p>任一非平凡树 T 至少有两片树叶</p>
+</blockquote>
+<h3 id="定理-2-3"><a href="#定理-2-3" class="headerlink" title="定理 2.3"></a>定理 2.3</h3><blockquote>
+<p>每个连通图都有生成树</p>
+</blockquote>
+<h3 id="推论-2-2"><a href="#推论-2-2" class="headerlink" title="推论 2.2"></a>推论 2.2</h3><blockquote>
+<p>$G$是连通图的充要条件是$G$有生成树</p>
+</blockquote>
+<p>————————————————————————————————————————————</p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h3 id="算法-1-1"><a href="#算法-1-1" class="headerlink" title="算法 1.1"></a>算法 1.1</h3><blockquote>
+<p>$Dijkstra$ 算法<br>输入：加权图$G &#x3D; (V(G),E(G)), w:E(G) \rightarrow R^+ ,顶点u_0 \in V(G)$<br>输出：$u_0$到其余所有顶点的距离和最短路径<br>核心思想为贪心算法</p>
+</blockquote>
+<p>————————————————————————————————————————————</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><ul>
+<li>题目右上角标$*$号意为有思考价值，标$\Delta$为重要</li>
+</ul>
+<h3 id="例-1-2"><a href="#例-1-2" class="headerlink" title="例 1.2"></a>例 1.2</h3><ul>
+<li>在一次晚会上，朋友间互相握手致意，试证明：握手次数为奇数的人数为偶数。</li>
+</ul>
+<blockquote>
+<p>定理 1.1 $\qquad \qquad \qquad \qquad \qquad 2\varepsilon(G) &#x3D; \varepsilon_奇(G) + \varepsilon_偶(G)$</p>
+</blockquote>
+<h3 id="例-1-3"><a href="#例-1-3" class="headerlink" title="例 1.3"></a>例 1.3</h3><ul>
+<li>任意的碳氢化合物中，氢原子的个数都是偶数</li>
+</ul>
+<blockquote>
+<p>推论 1.1 $\qquad \qquad \qquad \qquad \qquad  化合价为1，度数为奇数$</p>
+</blockquote>
+<h3 id="例-1-5"><a href="#例-1-5" class="headerlink" title="例 $1.5^*$"></a>例 $1.5^*$</h3><ul>
+<li>设有$2k$个电话交换台，每个交换台至少与其他$k$个交换台直接相连。证明：任意两个交换台或者可以直接通话，或者可以借助于其他交换台的中转进行通话。</li>
+</ul>
+<blockquote>
+<p>证明图 G 是连通图。$\qquad \qquad \qquad$ 反证，假设至少有两个连通图，构造两个方向相反的不等式</p>
+</blockquote>
+<h3 id="例-1-6"><a href="#例-1-6" class="headerlink" title="例 1.6"></a>例 1.6</h3><ul>
+<li>若图 G 中仅有两个顶点的度数为奇数，则这两个顶点连通。</li>
+</ul>
+<blockquote>
+<p>反证：若不连通，则它们分属两个不同的连通片，单个连通片中的度数和为奇数，与$定理1.1$矛盾</p>
+</blockquote>
+<h3 id="例-1-8-Delta"><a href="#例-1-8-Delta" class="headerlink" title="例 $1.8^\Delta$"></a>例 $1.8^\Delta$</h3><ul>
+<li>设 G 是简单图，$\delta(G) \ge 2$，则 G 中含圈</li>
+</ul>
+<blockquote>
+<p>$“最长轨道”$。G 中最长轨道的起点$v_0$必（至少）有一点$w$，该点必然在这条最长轨道上，否则会推出矛盾，设$w &#x3D; v_i$，这就形成了一个圈</p>
+</blockquote>
+<h3 id="例-1-9"><a href="#例-1-9" class="headerlink" title="例 1.9"></a>例 1.9</h3><ul>
+<li>设 G 是连通图，$G’ \subseteq G $，且$|V(G’)| ＜ |V(G)|$，则存在$e &#x3D; uv \in E(G)$，使得$u \in V(G)$，$v \in V(G) - V(G’)$.</li>
+</ul>
+<blockquote>
+<p>利用连通、真包含于的条件。存在两个子图，两个子图中存在轨迹，从而在轨迹上存在连续的两个顶点满足条件</p>
+</blockquote>
+<h3 id="例-1-10-Delta"><a href="#例-1-10-Delta" class="headerlink" title="例 $1.10^\Delta$"></a>例 $1.10^\Delta$</h3><ul>
+<li>设 G 是简单图，$\delta (G) \ge 3$，则 G 中含偶图</li>
+</ul>
+<blockquote>
+<p>设最长轨道，仿照例 1.8 可以从起点开始构造出三个圈，三者总长度为$$(i + 1) + (j + 1) + (j - i + 2) &#x3D; 2 \times j + 4$$为偶数，所以三者中至少有一个偶圈</p>
+</blockquote>
+<h3 id="例-1-11"><a href="#例-1-11" class="headerlink" title="例 $1.11^*$"></a>例 $1.11^*$</h3><ul>
+<li>任给图 G,G 与其补图$G^C$中至少有一个是连通图</li>
+</ul>
+<blockquote>
+<p>暂无</p>
+</blockquote>
+<h3 id="例-2-2"><a href="#例-2-2" class="headerlink" title="例 2.2"></a>例 2.2</h3><ul>
+<li>连通图$G$的任意无圈子图，都是$G$的某棵生成树的子图</li>
+</ul>
+<blockquote>
+<p>设$H$是$G$的无圈子图。<br>若$G$是树，显然成立。<br>若$G$不是树。取一个圈$G_1$，圈上至少有一条边不在$H$上，去掉这个边，得到$G_2$，$H$仍是$G_2$的子图。<br>若仍含有圈，则继续上述步骤，有限步后会得到一个以$H$为子图的$G_k$，$G_k$连通无圈，是$G$的一棵生成树</p>
+</blockquote>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+          <li>图论</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
