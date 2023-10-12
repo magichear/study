@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   Lab 1 reportPB22xxxxxx XXX 实验目的与内容实验目的：学习 verilog 语法，熟悉数电实验的流程实验内容：本次实验学习了部分简单的 verilog 语法，配置了 vivado-vscode">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/digital_experiment/Lab1/">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   Lab 1 reportPB22xxxxxx XXX 实验目的与内容实验目的：学习 verilog 语法，熟悉数电实验的流程实验内容：本次实验学习了部分简单的 verilog 语法，配置了 vivado-vscode">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-12T09:20:21.218Z">
+<meta property="article:modified_time" content="2023-10-12T09:20:21.218Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/digital_experiment/Lab1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/digital_experiment/Lab1/","path":"docs/digital_experiment/Lab1/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lab-1-report"><span class="nav-number">1.</span> <span class="nav-text">Lab 1 report</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84%E4%B8%8E%E5%86%85%E5%AE%B9"><span class="nav-number">1.1.</span> <span class="nav-text">实验目的与内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.2.</span> <span class="nav-text">逻辑设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-1%EF%BC%9A%E5%B0%86-8bit-%E7%9A%84%E8%BE%93%E5%85%A5%E4%BF%A1%E5%8F%B7%E6%8C%89%E4%BD%8D%E7%BF%BB%E8%BD%AC"><span class="nav-number">1.2.1.</span> <span class="nav-text">题目 1：将 8bit 的输入信号按位翻转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2-1%EF%BC%9A%E7%94%A8-assign-%E8%AF%AD%E5%8F%A5%E5%AE%9E%E7%8E%B0%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%8F%96%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.2.2.</span> <span class="nav-text">题目 2.1：用 assign 语句实现两个数取最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2-2%EF%BC%9A%E7%94%A8-always-%E5%92%8C-if-else-%E8%AF%AD%E5%8F%A5%E8%8E%B7%E5%BE%97%E4%B8%89%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.2.3.</span> <span class="nav-text">题目 2.2：用 always 和 if-else 语句获得三个数的最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-2-3%EF%BC%9A%E4%BE%8B%E5%8C%96-MAX2%EF%BC%8C%E8%8E%B7%E5%BE%97%E4%B8%89%E4%B8%AA%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="nav-number">1.2.4.</span> <span class="nav-text">题目 2.3：例化 MAX2，获得三个数的最大值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE-3-%E8%BE%93%E5%87%BA%E4%B8%80%E4%B8%AA%E4%BD%8D%E5%AE%BD%E4%B8%BA-3-%E7%9A%84%E4%BF%A1%E5%8F%B7-in-%E4%B8%AD%E4%B8%BA-1-%E7%9A%84%E4%BD%8D%E7%9A%84%E6%95%B0%E7%9B%AE"><span class="nav-number">1.2.5.</span> <span class="nav-text">题目 3: 输出一个位宽为 3 的信号 in 中为 1 的位的数目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%80%A7%E5%BF%85%E5%81%9A%E9%A2%98-2%EF%BC%9AVerilog-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.2.6.</span> <span class="nav-text">选择性必做题 2：Verilog 运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.</span> <span class="nav-text">仿真结果与分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.4.</span> <span class="nav-text">电路设计与分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">测试结果与分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.6.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/study/mgchrzio1@proton.me" title="E-Mail → mgchrzio1@proton.me" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/magichear/study/raw/gh-pages/wechatpay.png" title="https:&#x2F;&#x2F;github.com&#x2F;magichear&#x2F;study&#x2F;raw&#x2F;gh-pages&#x2F;wechatpay.png" rel="noopener" target="_blank">来点赞助吗</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-图论"><a href="/study/docs/graph_theory/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>图论</a></li>
+
+
+      
+  <li class="menu-item menu-item-数电实验"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>数电实验</a></li>
+
+
+      
+  <li class="menu-item menu-item-常用快捷键"><a href="/study/docs/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>常用快捷键</a></li>
+
+
+      
+  <li class="menu-item menu-item-作业"><a href="/study/docs/homework/" rel="section"><i class="fa fa-puzzle-th fa-fw"></i>作业</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-lab1"><a href="/study/docs/digital_experiment/Lab1/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab1</a></li>
+
+
+    </ul>
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/digital_experiment/">数电实验</a></li>
+          <li>LAB1</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+});
+</script>
+
+<h1 id="Lab-1-report"><a href="#Lab-1-report" class="headerlink" title="Lab 1 report"></a>Lab 1 report</h1><p><strong>PB22xxxxxx XXX</strong></p>
+<h2 id="实验目的与内容"><a href="#实验目的与内容" class="headerlink" title="实验目的与内容"></a>实验目的与内容</h2><p>实验目的：学习 <code>verilog</code> 语法，熟悉数电实验的流程<br>实验内容：本次实验学习了部分简单的 <code>verilog</code> 语法，配置了 <code>vivado-vscode</code> 本地开发环境，编写了 5 段简单的代码，实现了将 <code>8bit</code> 的输入信号按位翻转、用 <code>assign</code> 语句实现两个数取最大值、用 <code>always</code> 和 <code>if-else</code> 语句获得三个数的最大值、通过例化操作获得三个数的最大值、计算出位宽为 <code>3</code> 的信号 <code>in</code> 中为 <code>1</code> 的位的数目、理解<code>Verilog</code>运算符的意义。</p>
+<h2 id="逻辑设计"><a href="#逻辑设计" class="headerlink" title="逻辑设计"></a>逻辑设计</h2><h3 id="题目-1：将-8bit-的输入信号按位翻转"><a href="#题目-1：将-8bit-的输入信号按位翻转" class="headerlink" title="题目 1：将 8bit 的输入信号按位翻转"></a>题目 1：将 8bit 的输入信号按位翻转</h3><p>这里将<code>in</code>的每一位按照从低位到高位的顺序重新排列，然后赋值给了<code>out</code></p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 位选择操作符 [ ] 用于访问向量的单个位或位范围,它允许在不改变原始向量的情况下操作它的部分位</span></span><br><span class="line"><span class="keyword">module</span> top_module(</span><br><span class="line">    <span class="keyword">input</span>  [<span class="number">7</span>:<span class="number">0</span>]      in,</span><br><span class="line">    <span class="keyword">output</span> [<span class="number">7</span>:<span class="number">0</span>]      out</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Your codes should start from here.</span></span><br><span class="line">    <span class="keyword">assign</span> out = &#123;in[<span class="number">0</span>], in[<span class="number">1</span>], in[<span class="number">2</span>], in[<span class="number">3</span>], in[<span class="number">4</span>], in[<span class="number">5</span>], in[<span class="number">6</span>], in[<span class="number">7</span>]&#125;;</span><br><span class="line"><span class="comment">// End of your codes.</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+<p>赋值情况如下：<br>$$高\rightarrow 低 &#x3D; 低 \rightarrow 高$$</p>
+<p>[ ] 用于访问向量的单个位或位范围,它允许在不改变原始向量的情况下操作它的部分位</p>
+<p><code>in</code>和<code>out</code>的位顺序并没有本质的区别。在本题中，定义了一个 8 位宽的输入<code>input [7:0] in</code>，那么<code>in[0]</code>就是最低位，<code>in[7]</code>就是最高位，<code>output</code>同理。</p>
+<p>代码中的赋值方式为：</p>
+<p>$$<br>assign\quad out &#x3D; {in[0], in[1], in[2], in[3], in[4], in[5], in[6], in[7]};<br>$$</p>
+<p>它们将按顺序对应地赋给下面的位置</p>
+<p>$$<br>out[7],out[6],out[5],out[4],out[3],out[2],out[1],out[0]<br>$$</p>
+<p>这里将<code>in</code>的每一位按照从低位到高位的顺序重新排列，然后赋值给了<code>out</code>。因此<code>out</code>的位顺序实际上是与输入<code>in</code>相反的。</p>
+<p>这就实现了 <code>in</code> 的按位翻转。</p>
+<h3 id="题目-2-1：用-assign-语句实现两个数取最大值"><a href="#题目-2-1：用-assign-语句实现两个数取最大值" class="headerlink" title="题目 2.1：用 assign 语句实现两个数取最大值"></a>题目 2.1：用 assign 语句实现两个数取最大值</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> MAX2 (</span><br><span class="line">    <span class="keyword">input</span>  [<span class="number">7</span>:<span class="number">0</span>]         num1, num2,</span><br><span class="line">    <span class="keyword">output</span> [<span class="number">7</span>:<span class="number">0</span>]         max</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Your codes should start from here.</span></span><br><span class="line"><span class="keyword">assign</span> max = (num1 &gt; num2) ? num1 : num2;</span><br><span class="line"><span class="comment">// End of your codes.</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+<p>使用条件运算符对<code>num1</code>与<code>num2</code>进行比较，较大值赋给<code>max</code>，其效果与以下伪代码的逻辑相当</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num1 &gt; num2:</span><br><span class="line">    <span class="built_in">max</span> = num1</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">max</span> = num2</span><br></pre></td></tr></table></figure>
+
+<h3 id="题目-2-2：用-always-和-if-else-语句获得三个数的最大值"><a href="#题目-2-2：用-always-和-if-else-语句获得三个数的最大值" class="headerlink" title="题目 2.2：用 always 和 if-else 语句获得三个数的最大值"></a>题目 2.2：用 always 和 if-else 语句获得三个数的最大值</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> MAX3 (</span><br><span class="line">    <span class="keyword">input</span>       [<span class="number">7</span>:<span class="number">0</span>]         num1, num2, num3,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span>  [<span class="number">7</span>:<span class="number">0</span>]         max</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Your codes should start from here.</span></span><br><span class="line"><span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span> (num1 &gt; num2 &amp;&amp; num1 &gt; num3) <span class="comment">// 若 num1 同时大于其它两数，则它最大</span></span><br><span class="line">        max = num1;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (num2 &gt; num3)           <span class="comment">// 这一步成立仅当上一步两个条件都不成立</span></span><br><span class="line">        max = num2;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        max = num3;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="comment">// End of your codes.</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+<p>若<code>num1</code>同时大于<code>num2</code>与<code>num3</code>，则<code>num1</code>最大；<br>否则，若<code>num2</code>大于<code>num3</code>，则<code>num2</code>最大，不可能出现<code>num1</code>&gt;<code>num2</code>但<code>num2</code>&gt;<code>num3</code>的情况；<br>若前两步都不成立，则<code>num3</code>最大。</p>
+<h3 id="题目-2-3：例化-MAX2，获得三个数的最大值"><a href="#题目-2-3：例化-MAX2，获得三个数的最大值" class="headerlink" title="题目 2.3：例化 MAX2，获得三个数的最大值"></a>题目 2.3：例化 MAX2，获得三个数的最大值</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> MAX3 (</span><br><span class="line">    <span class="keyword">input</span>        [<span class="number">7</span>:<span class="number">0</span>]    num1, num2, num3,</span><br><span class="line">    <span class="keyword">output</span>  <span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>]    max</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Your codes should start from here.</span></span><br><span class="line"><span class="keyword">wire</span> [<span class="number">7</span>:<span class="number">0</span>] max23;   <span class="comment">// 接收 M1 的输出，并作为输入提供给 M2</span></span><br><span class="line">MAX2 M1 (</span><br><span class="line">    <span class="variable">.num1</span>(num1),</span><br><span class="line">    <span class="variable">.num2</span>(num2),</span><br><span class="line">    <span class="variable">.max</span>(max23)     <span class="comment">// num1 与 num2 中较大的将会被输出</span></span><br><span class="line">);</span><br><span class="line">MAX2 M2 (</span><br><span class="line">    <span class="variable">.num1</span>(max23),   <span class="comment">// 上一步中较大的继续与 num3 比较</span></span><br><span class="line">    <span class="variable">.num2</span>(num3),</span><br><span class="line">    <span class="variable">.max</span>(max)</span><br><span class="line">);</span><br><span class="line"><span class="comment">// End of your codes.</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+
+<p>输入端输入三个值，例化两次，先比较出其中两个数中的较大值，再将这个较大值与第三个数比较，最后得到三个数的最大值。<br>每段例化的前两行为输入，第三行为输出</p>
+<h3 id="题目-3-输出一个位宽为-3-的信号-in-中为-1-的位的数目"><a href="#题目-3-输出一个位宽为-3-的信号-in-中为-1-的位的数目" class="headerlink" title="题目 3: 输出一个位宽为 3 的信号 in 中为 1 的位的数目"></a>题目 3: 输出一个位宽为 3 的信号 in 中为 1 的位的数目</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> Count4Ones(</span><br><span class="line">    <span class="keyword">input</span>       [<span class="number">2</span>:<span class="number">0</span>]         in,</span><br><span class="line">    <span class="keyword">output</span> <span class="keyword">reg</span>  [<span class="number">1</span>:<span class="number">0</span>]         out</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Your codes should start from here.</span></span><br><span class="line">    <span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">        out = &#123;<span class="number">1&#x27;b0</span>,in[<span class="number">0</span>]&#125; + &#123;<span class="number">1&#x27;b0</span>,in[<span class="number">1</span>]&#125; + &#123;<span class="number">1&#x27;b0</span>,in[<span class="number">2</span>]&#125;;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="comment">// End of your codes.</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>in[0]</code>、<code>in[1]</code>、<code>in[2]</code>的状态只有<code>0</code>和<code>1</code>，相加即可求得三个数中<code>1</code>的数目，但因其都是一位，需要先扩展（用一个位的 0 与其拼接）再加到<code>out</code>里</p>
+<h3 id="选择性必做题-2：Verilog-运算符"><a href="#选择性必做题-2：Verilog-运算符" class="headerlink" title="选择性必做题 2：Verilog 运算符"></a>选择性必做题 2：Verilog 运算符</h3><p>题目所给输入：a &#x3D; 8’b0011_0011, b &#x3D; 8’b1111_0000。计算结果见注释：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">assign</span> c = a &amp; b;                       <span class="comment">// c = 8&#x27;b0011_0000                 按位与</span></span><br><span class="line"><span class="keyword">assign</span> d = a || b;                      <span class="comment">// d = 8&#x27;b0000_0001                 逻辑或</span></span><br><span class="line"><span class="keyword">assign</span> e = a ^ b;                       <span class="comment">// e = 8&#x27;b1100_0011                 按位异或</span></span><br><span class="line"><span class="keyword">assign</span> f = ~a;                          <span class="comment">// f = 8&#x27;b1100_1100                 按位非</span></span><br><span class="line"><span class="keyword">assign</span> g = &#123;a[<span class="number">2</span>:<span class="number">0</span>], b[<span class="number">3</span>:<span class="number">0</span>], &#123;<span class="number">1&#x27;b1</span>&#125;&#125;;    <span class="comment">// g = 8&#x27;b011_0000_1 = 8&#x27;b01100001  拼接</span></span><br><span class="line"><span class="keyword">assign</span> h = b &gt;&gt;&gt; <span class="number">3</span>;                     <span class="comment">// h = 8&#x27;b1111_1110                 算数右移</span></span><br><span class="line"><span class="keyword">assign</span> i = &amp;b;                          <span class="comment">// i = 8&#x27;b0000_0000                 归约与</span></span><br><span class="line"><span class="keyword">assign</span> j = (a &gt; b) ? a : b;             <span class="comment">// j = 8&#x27;b1111_0000                 三目条件运算符</span></span><br><span class="line"><span class="keyword">assign</span> k = a - b;                       <span class="comment">// k = 8&#x27;b0100_0011                 算数减法</span></span><br><span class="line"><span class="keyword">assign</span> l = !a;                          <span class="comment">// l = 8&#x27;b0000_0000                 逻辑非</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>取非等操作会产生一位的结果，但是我们的输出变量都被定义为八位，输出变量的高位会被接空，自动赋值为<code>0</code>（严格来说应该为 x）</li>
+<li>计算减法时，默认为补码，<code>a</code> - <code>b</code> &#x3D; <code>a</code> + <code>(-b)</code>，在这一题里表现为将<code>8&#39;b1111_0000</code>取反加一再与<code>8&#39;b0011_0011</code>相加</li>
+</ol>
+<h2 id="仿真结果与分析"><a href="#仿真结果与分析" class="headerlink" title="仿真结果与分析"></a>仿真结果与分析</h2><p>本次实验不涉及仿真</p>
+<h2 id="电路设计与分析"><a href="#电路设计与分析" class="headerlink" title="电路设计与分析"></a>电路设计与分析</h2><p>本次实验无此内容</p>
+<h2 id="测试结果与分析"><a href="#测试结果与分析" class="headerlink" title="测试结果与分析"></a>测试结果与分析</h2><p>本次实验并未上板</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本次实验中重点学到了以下内容：</p>
+<ol>
+<li>定义的变量（如：<code>out[7:0]</code>）的默认排序为高位 $\rightarrow$ 低位，将输入的变量倒着写再直接赋值给<code>out</code>即可实现按位翻转</li>
+<li>三目条件运算符、<code>if-else</code>语句的使用方式与 C 语言中的类似</li>
+<li>例化接口、变量名尽量有意义</li>
+<li>打表是非常好行为，尽量减少（新手最好不用）<code>for</code>循环</li>
+<li>将少位赋给多位时，最好先将少位的数用<code>1&#39;b0</code>等拼接到与多位数的位数相等，之后再进行加减等操作</li>
+<li>取非等操作会产生一位的结果，但是我们的输出变量都被定义为八位，输出变量的高位会被接空，自动赋值为<code>0</code>（严格来说应该为 x）</li>
+<li>减法运算默认都是补码，无符号，a - b $\rightarrow$ a + (-b)</li>
+<li>在检查排队过程中，听到助教强调：不要进行多次赋值（尤其是<code>count = count + 1</code>），第三次实验才涉及到组合环</li>
+</ol>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/digital_experiment/">数电实验</a></li>
+          <li>LAB1</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
