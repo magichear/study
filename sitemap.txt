@@ -9,13 +9,12 @@ https://magichear.github.io/study/docs/graph_theory/
 https://magichear.github.io/study/USTC/
 https://magichear.github.io/study/2023/10/08/hello-world/
 https://magichear.github.io/study/2023/10/09/%E8%8D%89%E7%8E%87%E4%BA%86/
-https://magichear.github.io/study/docs/homework/ics/
-https://magichear.github.io/study/docs/homework/
+https://magichear.github.io/study/docs/ics/
 https://magichear.github.io/study/2023/10/09/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/
 https://magichear.github.io/study/docs/
-https://magichear.github.io/study/docs/homework/ics/hw1/hw1_all.html
-https://magichear.github.io/study/docs/homework/ics/hw1/hw1.html
-https://magichear.github.io/study/docs/homework/ics/hw1/README.html
+https://magichear.github.io/study/docs/ics/hw1/hw1_all.html
+https://magichear.github.io/study/docs/ics/hw1/hw1.html
+https://magichear.github.io/study/docs/ics/hw1/README.html
 https://magichear.github.io/study
 https://magichear.github.io/study/tags/%E7%8A%B6%E6%80%81/
 https://magichear.github.io/study/tags/ssh/
