@@ -21,25 +21,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
 
-    <meta name="description" content="你若林间溪水，萦绕白杨良辰">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Klevenna">
-<meta property="og:url" content="https://magichear.github.io/study/log/">
+    <meta name="description" content="PB2215xxxx-magichear  本次作业中，在文件头加入了以下内容： 123456#define OK 1#define ERROR 0#define TRUE 1#define FALSE 0typedef int Status;  以尽量模仿课程环境，其他结构也尽可能参考了课程教学，请放心食用正文中每个问题的结构为：$$问题\Rightarrow主文件\Rightarrow头文件$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-迷宫全解与栈-YH三角与队列">
+<meta property="og:url" content="https://magichear.github.io/study/2023/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%BF%B7%E5%AE%AB%E5%85%A8%E8%A7%A3%E4%B8%8E%E6%A0%88-YH%E4%B8%89%E8%A7%92%E4%B8%8E%E9%98%9F%E5%88%97/">
 <meta property="og:site_name" content="Klevenna">
-<meta property="og:description" content="你若林间溪水，萦绕白杨良辰">
+<meta property="og:description" content="PB2215xxxx-magichear  本次作业中，在文件头加入了以下内容： 123456#define OK 1#define ERROR 0#define TRUE 1#define FALSE 0typedef int Status;  以尽量模仿课程环境，其他结构也尽可能参考了课程教学，请放心食用正文中每个问题的结构为：$$问题\Rightarrow主文件\Rightarrow头文件$">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-16T14:16:54.000Z">
+<meta property="article:modified_time" content="2023-10-16T14:18:19.613Z">
 <meta property="article:author" content="magichear">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://magichear.github.io/study/log/">
+<link rel="canonical" href="https://magichear.github.io/study/2023/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%BF%B7%E5%AE%AB%E5%85%A8%E8%A7%A3%E4%B8%8E%E6%A0%88-YH%E4%B8%89%E8%A7%92%E4%B8%8E%E9%98%9F%E5%88%97/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"log/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/2023/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%BF%B7%E5%AE%AB%E5%85%A8%E8%A7%A3%E4%B8%8E%E6%A0%88-YH%E4%B8%89%E8%A7%92%E4%B8%8E%E9%98%9F%E5%88%97/","path":"2023/10/16/数据结构-迷宫全解与栈-YH三角与队列/","title":"数据结构-迷宫全解与栈-YH三角与队列"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Klevenna</title>
+<title>数据结构-迷宫全解与栈-YH三角与队列 | Klevenna</title>
   
 
 
@@ -76,7 +78,7 @@
 
     <a href="/study/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Klevenna</h1>
+      <p class="site-title">Klevenna</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -102,7 +104,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -115,6 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">迷宫问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">主文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E6%93%8D%E4%BD%9C%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">栈操作头文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%9D%A8%E8%BE%89%E4%B8%89%E8%A7%92"><span class="nav-number">2.</span> <span class="nav-text">打印杨辉三角</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E4%BB%A3%E7%A0%81"><span class="nav-number">2.1.</span> <span class="nav-text">主代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%9F%E5%88%97%E6%93%8D%E4%BD%9C%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">队列操作头文件</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -171,16 +174,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%BF%B7%E5%AE%AB%E5%85%A8%E8%A7%A3%E4%B8%8E%E6%A0%88-YH%E4%B8%89%E8%A7%92%E4%B8%8E%E9%98%9F%E5%88%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -194,13 +198,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
+      <meta itemprop="name" content="数据结构-迷宫全解与栈-YH三角与队列 | Klevenna">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E8%BF%B7%E5%AE%AB%E5%85%A8%E8%A7%A3%E4%B8%8E%E6%A0%88-YH%E4%B8%89%E8%A7%92%E4%B8%8E%E9%98%9F%E5%88%97/" class="post-title-link" itemprop="url">数据结构-迷宫全解与栈-YH三角与队列</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据结构-迷宫全解与栈-YH三角与队列
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -223,8 +227,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>PB2215xxxx-magichear</p>
+    <div class="post-body" itemprop="articleBody"><p>PB2215xxxx-magichear</p>
 <hr>
 <p>本次作业中，在文件头加入了以下内容：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TRUE 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> FALSE 0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br></pre></td></tr></table></figure>
@@ -249,7 +252,6 @@
 <h3 id="队列操作头文件"><a href="#队列操作头文件" class="headerlink" title="队列操作头文件"></a>队列操作头文件</h3><p><code>SeqQueue.h</code>，同样动态分配内存，不过本题没有设置初始分配量</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OK 1</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ERROR 0</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OVERFLOW -1</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> Status;</span><br><span class="line"><span class="keyword">typedef</span> <span class="type">int</span> QElemType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    QElemType data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;QNode, *QueuePtr;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    QueuePtr front;<span class="comment">//队头</span></span><br><span class="line">    QueuePtr rear;<span class="comment">//队尾</span></span><br><span class="line">&#125;SeqQueue;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">InitQueue</span><span class="params">(SeqQueue *Q)</span><span class="comment">//初始化</span></span><br><span class="line">&#123;</span><br><span class="line">    Q-&gt;front = Q-&gt;rear = (QueuePtr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</span><br><span class="line">    <span class="keyword">if</span> (!Q-&gt;front) <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">    Q-&gt;front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status <span class="title function_">EnQueue</span><span class="params">(SeqQueue *Q, QElemType e)</span><span class="comment">//入队</span></span><br><span class="line">&#123;</span><br><span class="line">    QueuePtr p = (QueuePtr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</span><br><span class="line">    <span class="keyword">if</span> (!p) <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q-&gt;rear-&gt;next = p;</span><br><span class="line">    Q-&gt;rear = p;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status <span class="title function_">DeQueue</span><span class="params">(SeqQueue *Q, QElemType *e)</span><span class="comment">//出队</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q-&gt;front == Q-&gt;rear)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    QueuePtr p = Q-&gt;front-&gt;next;</span><br><span class="line">    *e = p-&gt;data;</span><br><span class="line">    Q-&gt;front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span> (Q-&gt;rear == p) Q-&gt;rear = Q-&gt;front;</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status <span class="title function_">GetHead</span><span class="params">(SeqQueue *Q, QElemType *e)</span><span class="comment">//取队头元素</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q-&gt;front == Q-&gt;rear)</span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">    *e = Q-&gt;front-&gt;next-&gt;data;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status <span class="title function_">IsEmpty</span><span class="params">(SeqQueue *Q)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (Q-&gt;rear == Q-&gt;front)</span><br><span class="line">        <span class="keyword">return</span> OK;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> ERROR;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Status <span class="title function_">DestroyQueue</span><span class="params">(SeqQueue *Q)</span><span class="comment">//销毁队列</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (Q-&gt;front)</span><br><span class="line">    &#123;</span><br><span class="line">        Q-&gt;rear = Q-&gt;front-&gt;next;</span><br><span class="line">        <span class="built_in">free</span>(Q-&gt;front);</span><br><span class="line">        Q-&gt;front = Q-&gt;rear;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
@@ -257,633 +259,22 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/study/2023/10/12/%E2%80%9C%E4%BA%BA%E4%B8%8D%E8%A6%81%E6%8A%B1%E6%9C%89%E4%BE%A5%E5%B9%B8%E5%BF%83%E7%90%86%E2%80%9D/" rel="prev" title="“人不要抱有侥幸心理”">
+                  <i class="fa fa-angle-left"></i> “人不要抱有侥幸心理”
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/12/%E2%80%9C%E4%BA%BA%E4%B8%8D%E8%A6%81%E6%8A%B1%E6%9C%89%E4%BE%A5%E5%B9%B8%E5%BF%83%E7%90%86%E2%80%9D/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/12/%E2%80%9C%E4%BA%BA%E4%B8%8D%E8%A6%81%E6%8A%B1%E6%9C%89%E4%BE%A5%E5%B9%B8%E5%BF%83%E7%90%86%E2%80%9D/" class="post-title-link" itemprop="url">“人不要抱有侥幸心理”</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-12 17:22:27 / 修改时间：17:28:26" itemprop="dateCreated datePublished" datetime="2023-10-12T17:22:27+08:00">2023-10-12</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="“人不要抱有侥幸心理”"><a href="#“人不要抱有侥幸心理”" class="headerlink" title="“人不要抱有侥幸心理”"></a>“人不要抱有侥幸心理”</h2><p>周三下午在西图睡到了 14:05，然后莫名地不想去上课（于是也就没去）。<br>翘掉的课在 3C 上，要去的话最多晚一点，但还是来得及的，就是不想去，心里想着：这个老师（男神 xmj）可是广为人知的从来不点名选手，翘就翘了，况且这学期第一次翘课，这倒霉的概率也太小了。遂留在西图写电磁。<br>结果晚上十点多的时候助教在群里问上课前有谁请假了，顿感不对劲，马上打开 bb 刷了回放，发现准备下课的时候布置了个课堂作业（还收上去了），这下直接一次两寄。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/10/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/10/%E4%BD%BF%E7%94%A8ssh%E8%BF%9E%E6%8E%A5%E5%88%B0github/" class="post-title-link" itemprop="url">使用ssh连接到github</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-10 16:00:22 / 修改时间：17:17:11" itemprop="dateCreated datePublished" datetime="2023-10-10T16:00:22+08:00">2023-10-10</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><p><strong>生成 SSH 密钥</strong>：首先，你需要在本地机器上生成一个 SSH 密钥对。你可以在终端中使用 <code>ssh-keygen</code> 命令来生成密钥对 ⁵。例如，你可以使用以下命令来生成一个新的 ed25519 密钥对：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C &quot;&lt;label&gt;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>其中，<code>&lt;label&gt;</code> 是一个可选的标签，用于帮助你识别这个密钥 ⁵。</p>
-</li>
-</ol>
-<p>输入密码时，密码不会被显示出来，但仍然可以正常输入</p>
-<ol start="2">
-<li><p><strong>添加密钥到 SSH-agent</strong>：生成密钥对后，你可以将其添加到 ssh-agent 中。ssh-agent 是 SSH 的一个关键管理器。将密钥添加到 ssh-agent 可以避免你反复输入密码 ⁵。</p>
-</li>
-<li><p><strong>将公钥添加到 GitHub 账户</strong>：然后，你需要将你的 SSH 公钥添加到 GitHub 账户中 ⁵。首先，复制你的 SSH 公钥。然后，在 GitHub 中打开设置页面，点击 “SSH and GPG keys”，然后点击 “New SSH key” 或 “Add SSH key”。在 “Key” 字段中粘贴你的公钥，然后点击 “Add SSH key”⁷。</p>
-</li>
-<li><p><strong>更改仓库 URL</strong>：最后，你需要将你的仓库 URL 更改为 SSH URL⁷。你可以使用以下命令来更改仓库 URL：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin &lt;ssh url&gt;</span><br></pre></td></tr></table></figure>
-<p>其中，<code>&lt;ssh url&gt;</code> 是你的仓库的 SSH URL⁷。</p>
-</li>
-</ol>
-<p>你可以使用 <code>git remote -v</code> 命令来查看你的仓库的远程 URL¹。这个命令会显示你的远程仓库的 fetch 和 push URL¹。如果这些 URL 是 SSH URL，那么你就已经成功地将你的连接方式切换到了 SSH¹。</p>
-<p>你也可以尝试使用 SSH 连接到 GitHub，然后查看是否能成功连接 ²。你可以使用以下命令来测试你的 SSH 连接：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p>当你第一次尝试通过 SSH 连接到 GitHub 时，你的计算机会询问你是否信任 GitHub 的服务器。这是一个常见的安全措施，用于防止中间人攻击。在这种情况下，你应该输入 “yes”，然后按回车键。这将把 GitHub 的服务器添加到你的计算机的已知主机列表中，以后你再连接到 GitHub 时就不会再看到这个提示了。</p>
-<p>如果你看到类似于 “Hi <username>! You’ve successfully authenticated, but GitHub does not provide shell access.” 的消息，那么你就已经成功地通过 SSH 连接到了 GitHub²。</p>
-<ol start="5">
-<li><strong>启动 ssh-agent</strong>:<br>这个错误可能是因为 ssh-agent 服务没有启动 ¹。你可以尝试以管理员权限运行 PowerShell，然后手动启动服务 ¹。你可以通过以下命令来检查 ssh-agent 服务的状态 ¹：</li>
-</ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span></span><br></pre></td></tr></table></figure>
-
-<p>如果服务的状态显示为 “Stopped”，那么你需要将其启动类型设置为 “Manual” 或 “Automatic”，然后再次尝试启动服务 ¹。你可以使用以下命令来设置启动类型 ¹：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Service</span> <span class="literal">-Name</span> ssh<span class="literal">-agent</span> <span class="literal">-StartupType</span> Manual</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Service</span> <span class="literal">-Name</span> ssh<span class="literal">-agent</span> <span class="literal">-StartupType</span> Automatic</span><br></pre></td></tr></table></figure>
-
-<p>然后，你可以再次尝试启动服务 ¹：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-Service</span> ssh<span class="literal">-agent</span></span><br></pre></td></tr></table></figure>
-
-<p>在 Windows 服务中，”Manual” 和 “Automatic” 是服务的两种启动类型 ¹²³：</p>
-<ul>
-<li><p><strong>Automatic</strong>：这意味着服务会在计算机启动时自动启动 ¹²。这是因为有些服务是系统运行所必需的，或者它们需要在系统启动时就开始运行 ²。</p>
-</li>
-<li><p><strong>Manual</strong>：这意味着服务不会在计算机启动时自动启动 ¹²。相反，它们只有在被其他服务或程序调用时才会启动 ¹²。这种类型的服务通常是那些不常用，或者只在特定条件下才需要的服务 ²。</p>
-</li>
-</ul>
-<p>总的来说，”Automatic” 和 “Manual” 的主要区别在于服务是否会在计算机启动时自动启动 ¹²</p>
-<ol start="6">
-<li><strong>关闭 ssh-agent</strong>:<br>在你完成 SSH 操作后，你可以选择是否关闭 ssh-agent³⁴。如果你不再需要 SSH 连接，那么关闭 ssh-agent 是一个好主意，因为这样可以避免留下活动的密钥 ³。然而，如果你仍然需要 SSH 连接，那么你可能希望保持 ssh-agent 处于运行状态 ⁴。</li>
-</ol>
-<p>如果你决定关闭 ssh-agent，你可以使用以下命令来停止它 ²：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Stop-Service</span> ssh<span class="literal">-agent</span></span><br></pre></td></tr></table></figure>
-
-<p>个人用户还是建议设置为自动</p>
-<p>参考：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://www.linuxfordevices.com/tutorials/linux/connect-to-github-with-ssh">https://www.linuxfordevices.com/tutorials/linux/connect-to-github-with-ssh</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/09/%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%E4%B8%BA%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/09/%E5%9B%BE%E7%89%87%E8%AE%BE%E7%BD%AE%E4%B8%BA%E6%B0%B8%E4%B9%85%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">图片设置为永久链接</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-09 23:00:16 / 修改时间：23:36:15" itemprop="dateCreated datePublished" datetime="2023-10-09T23:00:16+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="注册-登录链接"><a href="#注册-登录链接" class="headerlink" title="注册&#x2F;登录链接"></a>注册&#x2F;登录链接</h2><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/login?next=/login/cli/82f73849-2702-4fde-aa75-958faed0e8cf">https://www.npmjs.com/login?next=/login/cli/82f73849-2702-4fde-aa75-958faed0e8cf</a></p>
-<h2 id="npm-init-的初始化过程的常见的字段："><a href="#npm-init-的初始化过程的常见的字段：" class="headerlink" title="npm init 的初始化过程的常见的字段："></a>npm init 的初始化过程的常见的字段：</h2><ul>
-<li><strong>package name</strong>: 这是你的包的名称。它应该是独一无二的，因为它将被用于在 npm 上发布你的包。例如，你可以输入<code>my-image-package</code>。</li>
-<li><strong>version</strong>: 这是你的包的版本号。默认情况下，它应该是<code>1.0.0</code>。</li>
-<li><strong>description</strong>: 这是对你的包的简短描述。</li>
-<li><strong>entry point</strong>: 这是当其他人安装并使用你的包时，Node.js 将首先运行的文件。对于只包含图片的包，这通常不重要。</li>
-<li><strong>test command, git repository, keywords, author, license</strong>: 这些字段都是可选的，你可以根据需要填写。</li>
-</ul>
-<p>在每个提示后面，按回车键将会选择括号中的默认值（如果有）。如果你不确定某个字段应该填什么，你可以先选择默认值，稍后再在<code>package.json</code>文件中进行修改。</p>
-<p>完成所有步骤后，一个新的<code>package.json</code>文件将会在你的项目目录中创建。然后，你可以按照我之前提供的步骤将你的图片添加到项目中，并更新<code>package.json</code>文件。</p>
-<h2 id="更新-npm-包的步骤如下："><a href="#更新-npm-包的步骤如下：" class="headerlink" title="更新 npm 包的步骤如下："></a>更新 npm 包的步骤如下：</h2><ol>
-<li><p><strong>修改你的代码或资源</strong>：首先，你需要对你的包进行所需的修改。这可能包括添加新的图片，修改现有的图片，或者更改其他文件。</p>
-</li>
-<li><p><strong>更新版本号</strong>：每次发布 npm 包时，都需要更新<code>package.json</code>文件中的版本号。你可以手动更改它，也可以使用<code>npm version</code>命令来自动更新。这个命令有三个参数：<code>patch</code>（修订），<code>minor</code>（次版本）和<code>major</code>（主版本），分别对应语义化版本控制的三个级别。例如，如果你想更新修订号（也就是最后一个数字），你可以在命令行中运行<code>npm version patch</code>。</p>
-</li>
-<li><p><strong>发布你的包</strong>：使用<code>npm publish</code>命令将你的包发布到 npm。如果一切顺利，你的新版本应该很快就会出现在 npm 上。</p>
-</li>
-<li><p><strong>通过 unpkg 访问新版本</strong>：在 unpkg 的 URL 中，将版本号更改为你刚刚发布的新版本号。例如，如果你的新版本号是<code>1.0.1</code>，那么 URL 应该是 <code>https://unpkg.com/my-package@1.0.1/assets/img/logo.jpg</code></p>
-</li>
-</ol>
-<h2 id="获取图片永久链接"><a href="#获取图片永久链接" class="headerlink" title="获取图片永久链接"></a>获取图片永久链接</h2><p>以下是将图片作为 npm 包发布到 npm 上，然后通过 unpkg 获取永久链接的详细步骤：</p>
-<ol>
-<li><p><strong>创建一个 npm 项目</strong></p>
-<ul>
-<li>首先，你需要在你的计算机上安装 Node.js 和 npm。你可以从<a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js 官方网站</a>下载并安装它们。</li>
-<li>然后，在命令行中导航到你想要创建项目的目录，然后运行<code>npm init</code>命令。这将会引导你创建一个新的 npm 项目。</li>
-</ul>
-</li>
-<li><p><strong>将图片添加到项目中</strong></p>
-<ul>
-<li>将你想要作为永久链接的图片文件复制到你的 npm 项目的目录中。你可以根据需要创建子目录来组织你的文件。</li>
-</ul>
-</li>
-<li><p><strong>更新 package.json 文件</strong></p>
-<ul>
-<li>打开<code>package.json</code>文件，然后找到<code>files</code>字段。如果该字段不存在，那么你需要添加它。</li>
-<li>在<code>files</code>数组中，添加一个字符串，该字符串是你的图片文件（或包含图片文件的目录）相对于<code>package.json</code>文件的路径。例如，如果你的图片文件名为<code>logo.jpg</code>并且位于项目根目录下的<code>img</code>目录中，那么你应该添加<code>&quot;img/logo.jpg&quot;</code>到<code>files</code>数组中。<br>“files”: [“logo”,”picture”]</li>
-</ul>
-</li>
-<li><p><strong>发布 npm 包</strong></p>
-<ul>
-<li>在命令行中，导航到你的 npm 项目的目录，然后运行<code>npm login</code>命令。按照提示输入你的 npm 账户信息。</li>
-<li>登录成功后，运行<code>npm publish</code>命令来发布你的包。</li>
-</ul>
-</li>
-<li><p><strong>通过 unpkg 访问图片</strong></p>
-<ul>
-<li>一旦你的包被成功发布到 npm 上，你就可以通过 unpkg 来访问你的图片了。例如，如果你的包名为<code>my-package</code>，版本号为<code>1.0.0</code>，并且你的图片文件位于<code>img/logo.jpg</code>，那么你可以通过以下 URL 来访问你的图片： <code>https://unpkg.com/my-package@1.0.0/img/logo.jpg</code></li>
-</ul>
-</li>
-</ol>
-<h2 id="删除已发布的-npm-包"><a href="#删除已发布的-npm-包" class="headerlink" title="删除已发布的 npm 包"></a>删除已发布的 npm 包</h2><p>可以删除以前发布的 npm 包。但是请注意，一旦删除了一个包，其他依赖于这个包的项目可能会受到影响。因此，在删除一个包之前，最好先通知使用这个包的开发者。</p>
-<p>以下是如何删除 npm 包的步骤：</p>
-<ol>
-<li>首先，你需要在命令行中运行<code>npm login</code>命令，并按照提示输入你的 npm 账户信息。</li>
-<li>登录成功后，运行<code>npm unpublish your-package-name</code>命令来删除你的包。请将<code>your-package-name</code>替换为你想要删除的包的名称。</li>
-</ol>
-<p>请注意，根据 npm 的政策，如果你的包已经存在 24 小时以上，那么你可能需要联系 npm 支持团队来删除你的包 ¹。<br>(1) <a target="_blank" rel="noopener" href="https://www.freecodecamp.org/chinese/news/npm-uninstall-how-to-remove-a-package/">npm Uninstall——如何删除包 freeCodeCamp.org</a><br>(2) <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/642047291">npm 卸载方法 - 知乎 - 知乎专栏</a><br>(3) <a target="_blank" rel="noopener" href="https://blog.csdn.net/ernijie/article/details/104948880">npm 包的安装与卸载-CSDN 博客</a><br>(4) <a target="_blank" rel="noopener" href="https://npm.nodejs.cn/uninstalling-packages-and-dependencies/">卸载包和依赖 | npm 中文网 - Node.js</a><br>(5) <a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/npm-uninstall-how-to-remove-a-package/">undefined</a><br>(6) <a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/author/kolade/">undefined</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/09/%E5%9F%BA%E6%9C%AC%E5%AE%8C%E5%B7%A5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/09/%E5%9F%BA%E6%9C%AC%E5%AE%8C%E5%B7%A5/" class="post-title-link" itemprop="url">基本完工</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-09 21:52:47 / 修改时间：21:54:23" itemprop="dateCreated datePublished" datetime="2023-10-09T21:52:47+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>这次的网站比较简约，框架也很好搭，两天就弄得差不多了，后面就是逐渐完善内容啦</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/09/%E8%8D%89%E7%8E%87%E4%BA%86/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/09/%E8%8D%89%E7%8E%87%E4%BA%86/" class="post-title-link" itemprop="url">草率了</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-09 13:12:14 / 修改时间：14:27:51" itemprop="dateCreated datePublished" datetime="2023-10-09T13:12:14+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>想部署到子项目中，但是主题一直应用不了，有点小烦</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/09/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/09/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%B0%9D%E8%AF%95/" class="post-title-link" itemprop="url">第一次尝试</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2023-10-09 01:48:09 / 修改时间：01:49:54" itemprop="dateCreated datePublished" datetime="2023-10-09T01:48:09+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Hexo + Next 搭建网站简直傻瓜！真的很方便</p>
-<p>之前搭网站都是用的 ModHeader 扩展爬取别人网站的 html 文件，又或者去找网站的开源资源，<br>现在这个虽然简洁了点，不过也正好，用来做一些资料的存放地，<br>之后打算慢慢把接触到的一些算法放上来</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-10-08 23:39:04" itemprop="dateCreated datePublished" datetime="2023-10-08T23:39:04+08:00">2023-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-09 14:27:59" itemprop="dateModified" datetime="2023-10-09T14:27:59+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
 
 
 
