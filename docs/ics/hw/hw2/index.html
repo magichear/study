@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   Homework 2T1 由真值表第二行，可知当 A、B 均为 低电平、C 带高电平时， Y 导通，而 Y 的上方是三个非门，故 A、B 必然在一起， C 单独控制 Y 到正极的一条路，所以在上方左边填入 C、右方填">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/ics/hw/hw2/">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="MathJax.Hub.Config({   tex2jax: {     inlineMath: [[&#39;$&#39;, &#39;$&#39;], [&#39;\\(&#39;, &#39;\\)&#39;]]   } });   Homework 2T1 由真值表第二行，可知当 A、B 均为 低电平、C 带高电平时， Y 导通，而 Y 的上方是三个非门，故 A、B 必然在一起， C 单独控制 Y 到正极的一条路，所以在上方左边填入 C、右方填">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://magichear.github.io/study/.io//t1_solution.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//t3.jpg">
+<meta property="og:image" content="https://magichear.github.io/study/.io//image.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//t6.jpg">
+<meta property="article:published_time" content="2023-11-17T14:09:55.413Z">
+<meta property="article:modified_time" content="2023-10-18T14:26:20.308Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://magichear.github.io/study/.io//t1_solution.png">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/ics/hw/hw2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ics/hw/hw2/","path":"docs/ics/hw/hw2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Homework-2"><span class="nav-number">1.</span> <span class="nav-text">Homework 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#T1"><span class="nav-number">1.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2"><span class="nav-number">1.2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T3"><span class="nav-number">1.3.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T4"><span class="nav-number">1.4.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T5"><span class="nav-number">1.5.</span> <span class="nav-text">T5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T6"><span class="nav-number">1.5.1.</span> <span class="nav-text">T6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T7"><span class="nav-number">1.5.2.</span> <span class="nav-text">T7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T8"><span class="nav-number">1.5.3.</span> <span class="nav-text">T8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T9"><span class="nav-number">1.5.4.</span> <span class="nav-text">T9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T10"><span class="nav-number">1.5.5.</span> <span class="nav-text">T10</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/study/mgchrzio1@proton.me" title="E-Mail → mgchrzio1@proton.me" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/magichear/study/raw/gh-pages/wechatpay.png" title="https:&#x2F;&#x2F;github.com&#x2F;magichear&#x2F;study&#x2F;raw&#x2F;gh-pages&#x2F;wechatpay.png" rel="noopener" target="_blank">来点赞助吗</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-图论"><a href="/study/docs/graph_theory/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>图论</a></li>
+
+
+      
+  <li class="menu-item menu-item-数电实验"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>数电实验</a></li>
+
+
+      
+  <li class="menu-item menu-item-常用快捷键"><a href="/study/docs/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>常用快捷键</a></li>
+
+
+      
+  <li class="menu-item menu-item-ics"><a href="/study/docs/ics/" rel="section"><i class="fa fa-puzzle-th fa-fw"></i>ICS</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-中文教材"><a href="https://magichear.github.io/study/docs/ics/ICS-ZH-CN.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>中文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-英文教材"><a href="https://magichear.github.io/study/docs/ics/Introduction-to-Computing-Systems.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>英文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw"><a href="/study/docs/ics/hw/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw</a></li>
+
+
+      
+  <li class="menu-item menu-item-lab"><a href="/study/docs/ics/Lab/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-hw1"><a href="/study/docs/ics/hw/hw1/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw1</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw2"><a href="/study/docs/ics/hw/hw2/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw2</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw3"><a href="/study/docs/ics/hw/hw3/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw3</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw4"><a href="/study/docs/ics/hw/hw4/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw4</a></li>
+
+
+    </ul>
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/hw/">HW</a></li>
+          <li>HW2</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+});
+</script>
+
+<h1 id="Homework-2"><a href="#Homework-2" class="headerlink" title="Homework 2"></a>Homework 2</h1><h2 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h2><ol>
+<li>由真值表第二行，可知当 A、B 均为 低电平、C 带高电平时， Y 导通，而 Y 的上方是三个非门，故 A、B 必然在一起， C 单独控制 Y 到正极的一条路，所以在上方左边填入 C、右方填入 A，而真值表第七行验证了我们的想法；</li>
+<li>同时，为了不“放生几百度电”（笑），我们需要保证上方接通时下方不会接地。先考虑给出的真值表第七行，Y 下方的第一个位置应该填入 C；再考虑真值表第二行，最后一个位置应该填入 A 或 B，这里为了与左边对称填入 B。</li>
+</ol>
+<p>从而本题的解如下：<br><img src="/study/.io//t1_solution.png" alt="Alt text"></p>
+<h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><p>NAND 门是逻辑完备的，因为我们可以用它来构造所有其他的逻辑门。<br>以下是使用 NAND 门来构造 NOT、AND、OR 和其他逻辑门的证明：</p>
+<ol>
+<li><p><strong>NOT</strong> 门：<br>如果我们将一个 NAND 门的两个输入都连接到同一个输入信号，当输入为 1 时，输出为 0；当输入为 0 时，输出为 1，这就构成了 NOT 门。即，<code>NOT A = A NAND A</code>。</p>
+</li>
+<li><p><strong>AND</strong> 门：<br>首先，将输入 A、B 接入一个 NAND 门，成为$\overline{AB}$，再通过一个由 NAND 构成的 NOT 门即可。即，<code>A AND B = NOT (A NAND B) = (A NAND B) NAND (A NAND B)</code>。</p>
+</li>
+<li><p><strong>OR</strong> 门：<br>由摩根定律，$$\overline{\overline{A} AND \overline{B}} &#x3D; A\quad OR\quad B$$首先，我们用两个 NAND 门分别对输入 A 和 B 进行 NOT 操作，然后将这两个 NAND 门的输出连接到第三个 NAND 门的输入端。即，<code>A OR B = NOT A NAND NOT B = (A NAND A) NAND (B NAND B)</code>。</p>
+</li>
+</ol>
+<p>构造出了上述基本逻辑门，我们就可以构造出其他的所有门，下面举个例子：</p>
+<ul>
+<li><strong>NOR</strong> 门：<br>将 NAND 构成的 OR 门与 NOT 门连接。首先，我们用一个 NAND 门对输入 A 和 B 进行 NOT 操作，然后将这个 NAND 门的输出连接到另一个 NAND 门的输入端。即，<code>A NOR B = NOT (A OR B) = ((A NAND A) NAND (B NAND B)) NAND ((A NAND A) NAND (B NAND B))</code>。</li>
+</ul>
+<p>至此，我们已经证明了只用 NAND 门就可以构造出所有其他的逻辑门，所以 NAND 是逻辑完备的。</p>
+<h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>对于求和位$S_i$，将译码器的输出 1、2、4 、7 连接到或门;<br>对于进位位$C_{i+1}$，将译码器的输出 3、5、6 、7 连接到另一个或门;<br>两个或门余下没连的输入全部接 0<br>由此我们可得电路图如下：</p>
+<p><img src="/study/.io//t3.jpg" alt="Alt text"></p>
+<h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><p>设计一个乘法器，接收两个 2 位输入 A[1:0]和 B[1:0]，并产生一个输出 Y，即 A[1:0]和 B[1:0]的乘积。<br>为了更容易区分，下面使用 verilog 的形式表示二进制数$\rightarrow$(位数)’(进制标识)(值)，如：2’b11 表示二位二进制数 11</p>
+<ol>
+<li><p>两位二进制输入<code>A[1:0]</code>的最大值是 2’b11，即 十进制里的 3</p>
+</li>
+<li><p>同样，两位二进制输入<code>B[1:0]</code>的最大值是 2’b11</p>
+</li>
+<li><p>当 A 和 B 都为最大值时，Y 的最大可能值是 4’b1001，即十进制中的 9。</p>
+</li>
+<li><p>在回答 3 中我们实际已经给出了，表示最大值 4’b1001 需要 4 位二进制数。</p>
+</li>
+<li><p>真值表如下</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">A[1]</th>
+<th align="center">A[0]</th>
+<th align="center">B[1]</th>
+<th align="center">B[0]</th>
+<th align="center">Y[3]</th>
+<th align="center">Y[2]</th>
+<th align="center">Y[1]</th>
+<th align="center">Y[0]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<ol start="6">
+<li>根据二进制乘法的定义，我们可以得到：</li>
+</ol>
+<p>$$<br>Y[2] &#x3D; (A[1]\cdot B[1]) \oplus (A[0]\cdot B[1])(A[1]\cdot B[0])<br>$$</p>
+<ul>
+<li>观察真值表，首先，当$(A[1]\cdot B[1])$为 0 时，Y[2]也为 0；</li>
+<li>当$(A[0]\cdot B[1])$与$(A[1]\cdot B[0])$同时为 1 时，说明此时应该向 Y[2]进位；</li>
+<li>当异或符号左右两边都为 0 时，此时 Y[2]显然为 0；</li>
+<li>当异或符号两边一个为 1 一个为 0 时，Y[2]不需要向 Y[3]进位，为 1；</li>
+<li>当两边都为 1 时，Y[2]需要向 Y[3]进位，为 0。</li>
+</ul>
+<p>但是，本题中没有提供异或门，不过我们可以利用公式$A \oplus B &#x3D; A\overline{B} + \overline{A}B$来搭一个异或门。<br>所以有</p>
+<pre><code>Y[2] = (((A[1] AND B[1])) AND (NOT((A[0] AND B[1])(A[1] AND B[0]))))
+     OR ((NOT((A[1] AND B[1]))) AND (A[0] AND B[1])(A[1] AND B[0]))
+</code></pre>
+<h2 id="T5"><a href="#T5" class="headerlink" title="T5"></a>T5</h2><p>异或门的功能是：当输入的两个信号相同时，输出为 0；当输入的信号不同时，输出为 1。<br>因为有：<br>$$A \oplus B &#x3D; A\overline{B} + \overline{A}B$$<br>从而结合 T2，我们可以得到：</p>
+<pre><code>  A XOR B =
+  (((A NAND (B NAND B)) NAND (A NAND (B NAND B))))
+  NAND
+  ((((A NAND A) NAND B) NAND ((A NAND A) NAND B)))
+</code></pre>
+<p>电路图如下：</p>
+<p><img src="/study/.io//image.png" alt="Alt text"></p>
+<h3 id="T6"><a href="#T6" class="headerlink" title="T6"></a>T6</h3><p>D 为控制信号，当 A、B、C 符合条件且 D 为 0 时，Z 输出 1；否则，若 D 为 1，或 A、B、C 不符合条件， Z 一律输出 0<br>写出真值表如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">A</th>
+<th align="center">B</th>
+<th align="center">C</th>
+<th align="center">D</th>
+<th align="center">Z</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>对于 A、B、C 我们有：</p>
+<p>$$<br>\begin{aligned}<br>\sum m(3,4,7) &amp;&#x3D; A\cdot \overline{B}\cdot \overline{C} + \overline{A}BC + ABC\<br>  &amp;&#x3D; A\cdot \overline{B}\cdot \overline{C} + BC<br>\end{aligned}<br>$$</p>
+<p>本题的公式为：</p>
+<p>$$<br>A\cdot \overline{B}\cdot \overline{C}\cdot\overline{D} + BC\overline{D}<br>$$</p>
+<p>逻辑门电路图如下：</p>
+<p><img src="/study/.io//t6.jpg" alt="Alt text"></p>
+<h3 id="T7"><a href="#T7" class="headerlink" title="T7"></a>T7</h3><p>有限状态机这里暂时还看不太懂，有点云里雾里，难道是把尾端直接接到第二个状态$?$</p>
+<h3 id="T8"><a href="#T8" class="headerlink" title="T8"></a>T8</h3><ol>
+<li><p>根据课本中提到的：内存中可独立识别的位置总数被称为“寻址空间”（adress space）<br>本题中表示地址的<code>bit</code>数为<code>a</code>，故我们可以识别$2^a$个存储位置。<br>从而最大的寻址空间是 $2^a$</p>
+</li>
+<li><p>根据课本中给出的$2^2 \times 3$内存小节的例子，<br>如果内存的寻址能力是 b 位，那么最多可以存储的位数将等于其最大地址空间乘以寻址能力，<br>即 $2^a \times b$ 位。</p>
+</li>
+</ol>
+<h3 id="T9"><a href="#T9" class="headerlink" title="T9"></a>T9</h3><ol>
+<li>A[1:0]的值必须为 00，WE 的值必须为 1。<br>当 A[1:0] &#x3D; 00 时 ，会选择到第一个存储器位置，而 WE &#x3D; 1 则表示写入操作。</li>
+<li>需要增加每个存储位置中的<code>bit</code>数目至<code>k</code>。<ul>
+<li>解答本题过程中，因为感觉自己的概念有点模糊，上网搜索资料发现很多地方都说“<code>n</code>根地址线提供的寻址能力是$2^n$”，但书中有两根地址线，而寻址能力只有 3？？是$2^n - 1$吗，示例有点少，学得不太明白</li>
+</ul>
+</li>
+<li>因为$$2^8 &#x3D; 256$$而$$2^9 &#x3D; 512$$所以，如果我们想要充分利用这个 PC 的地址空间，我们需要在图中的存储器中添加 7 条地址线（因为原始存储器只有 2 条地址线）。这样做之后，存储器的寻址能力将会变为$$2^9 &#x3D; 512$$（菜鸡落泪 ）</li>
+</ol>
+<h3 id="T10"><a href="#T10" class="headerlink" title="T10"></a>T10</h3><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>可能的值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>占领比例</td>
+<td>0~99（两队）</td>
+</tr>
+<tr>
+<td>得分</td>
+<td>0~3（两队）</td>
+</tr>
+<tr>
+<td>剩余时间</td>
+<td>0:00 到 3:00 之间的任何时间，格式为 m:s（分钟，秒）</td>
+</tr>
+<tr>
+<td>技能充能比例</td>
+<td>0~100（8 个玩家）</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p>最小位数计算：</p>
+<ul>
+<li>占领比例：需要 7 位$$<br>\begin{aligned}<br>&amp;2^7 &#x3D; 128 &gt; 99\<br>&amp;2^6 &#x3D; 64  &lt; 99<br>\end{aligned}<br>$$</li>
+<li>得分：需要 2 位$$2^2 &#x3D; 4 &gt; 3$$</li>
+<li>剩余时间：分别以分钟与秒为单位，分数最大为 3 分钟、秒数最大为 60 秒，需要 2+6 &#x3D; 8 位$$<br>\begin{aligned}<br>&amp;2^2 &#x3D; 4 &gt; 3\<br>&amp;2^6 &#x3D; 64 &gt; 60<br>\end{aligned}<br>$$</li>
+<li>技能充能比例：需要 7 位$$<br>\begin{aligned}<br>&amp;2^7 &#x3D; 128 &gt; 100\<br>&amp;2^6 &#x3D; 64  &lt; 100<br>\end{aligned}<br>$$</li>
+<li>所以，总共需要的最小位数是：$$(7 \times 2)+ (2 \times 2)+ (2+6) + (7 \times 8) &#x3D; 82$$</li>
+</ul>
+</li>
+<li><p>此时存储记分板状态所需的位数仍然是 82 位。<br>因为这种方法只改变了数据的组织方式，没有改变数据本身。</p>
+</li>
+<li><p>分开存储。<br>这些状态是比赛中的状态，需要频繁单独访问或修改，分开存储可以提高访问速度和灵活性。</p>
+</li>
+</ol>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/hw/">HW</a></li>
+          <li>HW2</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="Lab02: The PingPong Sequence PB22151796-莫环欣  实验目的 本次实验提到了一种名为“PingPong Sequence”的序列 这个序列的特点是，当序列的索引是 8 的倍数或者包含数字 8 时，序列的增减方向会发生改变。这类序列常常用于教授递归的概念。   在实验中，我们需要使用LC-3汇编语言来计算简单情况下的乒乓序列某位置的值  实现原理 教程中给出的实">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/ics/Lab/Lab2/">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="Lab02: The PingPong Sequence PB22151796-莫环欣  实验目的 本次实验提到了一种名为“PingPong Sequence”的序列 这个序列的特点是，当序列的索引是 8 的倍数或者包含数字 8 时，序列的增减方向会发生改变。这类序列常常用于教授递归的概念。   在实验中，我们需要使用LC-3汇编语言来计算简单情况下的乒乓序列某位置的值  实现原理 教程中给出的实">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://magichear.github.io/study/.io//Lab2.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//Lab2_light.png">
+<meta property="article:published_time" content="2023-11-17T14:07:22.573Z">
+<meta property="article:modified_time" content="2023-11-17T13:50:51.775Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://magichear.github.io/study/.io//Lab2.png">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/ics/Lab/Lab2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ics/Lab/Lab2/","path":"docs/ics/Lab/Lab2/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lab02-The-PingPong-Sequence"><span class="nav-number">1.</span> <span class="nav-text">Lab02: The PingPong Sequence</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="nav-number">1.1.</span> <span class="nav-text">实验目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81"><span class="nav-number">1.3.</span> <span class="nav-text">汇编代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertion-1-%E6%9C%AA%E4%BC%98%E5%8C%96%E5%BE%AA%E7%8E%AF%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.3.1.</span> <span class="nav-text">Vertion 1 未优化循环的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vertion-2-%E4%BC%98%E5%8C%96%E5%BE%AA%E7%8E%AF%E5%90%8E%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.3.2.</span> <span class="nav-text">Vertion 2 优化循环后的算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">1.4.</span> <span class="nav-text">结果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lab2-%E6%8F%90%E4%BA%A4%E7%BB%93%E6%9E%9C"><span class="nav-number">1.4.1.</span> <span class="nav-text">Lab2 提交结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lab2-light-%E6%8F%90%E4%BA%A4%E7%BB%93%E6%9E%9C"><span class="nav-number">1.4.2.</span> <span class="nav-text">Lab2 light 提交结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%BF%9B"><span class="nav-number">1.5.</span> <span class="nav-text">改进</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/study/mgchrzio1@proton.me" title="E-Mail → mgchrzio1@proton.me" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/magichear/study/raw/gh-pages/wechatpay.png" title="https:&#x2F;&#x2F;github.com&#x2F;magichear&#x2F;study&#x2F;raw&#x2F;gh-pages&#x2F;wechatpay.png" rel="noopener" target="_blank">来点赞助吗</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-图论"><a href="/study/docs/graph_theory/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>图论</a></li>
+
+
+      
+  <li class="menu-item menu-item-数电实验"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>数电实验</a></li>
+
+
+      
+  <li class="menu-item menu-item-常用快捷键"><a href="/study/docs/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>常用快捷键</a></li>
+
+
+      
+  <li class="menu-item menu-item-ics"><a href="/study/docs/ics/" rel="section"><i class="fa fa-puzzle-th fa-fw"></i>ICS</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-中文教材"><a href="https://magichear.github.io/study/docs/ics/ICS-ZH-CN.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>中文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-英文教材"><a href="https://magichear.github.io/study/docs/ics/Introduction-to-Computing-Systems.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>英文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw"><a href="/study/docs/ics/hw/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw</a></li>
+
+
+      
+  <li class="menu-item menu-item-lab"><a href="/study/docs/ics/Lab/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-lab1"><a href="/study/docs/ics/Lab/Lab1/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab1</a></li>
+
+
+      
+  <li class="menu-item menu-item-lab2"><a href="/study/docs/ics/Lab/Lab2/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab2</a></li>
+
+
+    </ul>
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/Lab/">LAB</a></li>
+          <li>LAB2</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h1 id="Lab02-The-PingPong-Sequence"><a href="#Lab02-The-PingPong-Sequence" class="headerlink" title="Lab02: The PingPong Sequence"></a>Lab02: The PingPong Sequence</h1><pre><code> PB22151796-莫环欣
+</code></pre>
+<h2 id="实验目的"><a href="#实验目的" class="headerlink" title="实验目的"></a>实验目的</h2><ul>
+<li>本次实验提到了一种名为“PingPong Sequence”的序列<ul>
+<li>这个序列的特点是，当序列的索引是 8 的倍数或者包含数字 8 时，序列的增减方向会发生改变。这类序列常常用于教授递归的概念。</li>
+</ul>
+</li>
+<li>在实验中，我们需要使用<code>LC-3</code>汇编语言来计算简单情况下的乒乓序列某位置的值</li>
+</ul>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><ul>
+<li><p>教程中给出的实现原理如下方的<code>Python</code>代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_next_term</span>(<span class="params">v_n: <span class="built_in">int</span>, d_n: <span class="built_in">bool</span></span>):</span><br><span class="line">    <span class="keyword">if</span> d_n:</span><br><span class="line">        v_next = <span class="number">2</span> * v_n + <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        v_next = <span class="number">2</span> * v_n - <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> v_next % <span class="number">8</span> == <span class="number">0</span> <span class="keyword">or</span> last_digit(v_next) == <span class="number">8</span>:</span><br><span class="line">        d_next = <span class="keyword">not</span> d_n</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        d_next = d_n</span><br><span class="line">    <span class="keyword">return</span> v_next, d_next</span><br></pre></td></tr></table></figure></li>
+<li><p>在我们的第一版代码中。通过以下方法处理特定的运算</p>
+<ol>
+<li><p><code>v_next = 2 * v_n + 2</code></p>
+<ul>
+<li>先使用<code>ADD R1, R1, R1</code> 指令将存有值的寄存器（这里是 R1）倍增</li>
+<li>再使用<code>ADD R1, R1, #2</code> 指令将倍增后的寄存器值加 2</li>
+</ul>
+</li>
+<li><p><code>v_next = 2 * v_n - 2</code></p>
+<ul>
+<li>先使用<code>ADD R1, R1, R1</code> 指令将存有值的寄存器（这里是 R1）倍增</li>
+<li>再使用<code>ADD R1, R1, #-2</code>指令将倍增后的寄存器值减 2</li>
+</ul>
+</li>
+<li><p>判断是否需要翻转（是否为<code>8</code>的倍数或十进制表示尾数是否为<code>8</code>）</p>
+<ul>
+<li>使用了<code>CHECK</code>、<code>MODULO</code>、<code>D_MODULO</code>、<code>MODULO_EXTRA</code>四个标签</li>
+<li>通过模拟<code>模运算</code>进行判断</li>
+<li>将当前等待判断的值从<code>R1</code>复制到<code>R3</code>，避免修改原值<ul>
+<li>先清空(<code>AND R3, R3, #0</code>)再复制(<code>ADD R3, R1, #0</code>)</li>
+</ul>
+</li>
+<li>接下来跳转到进行模运算的标签<code>MODULO</code></li>
+<li>在<code>MODULO</code>中，<ul>
+<li>循环让<code>R4</code>减去<code>8</code></li>
+<li>循环让<code>R3</code>减去<code>10</code></li>
+<li>直到<code>R3 &lt;= 0</code>，跳转<code>MODULO_EXTRA</code>标签<ul>
+<li>模<code>10</code>的速度显然比模<code>8</code>快</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在<code>MODULO_EXTRA</code>中，<ul>
+<li>我们继续循环减<code>8</code></li>
+<li>直到<code>R4 &lt;= 0</code>，跳转<code>D_MODULO</code>标签</li>
+</ul>
+</li>
+<li>在<code>D_MODULO</code>标签中，<ul>
+<li><code>R4 = 0</code>时，待判断的值才可能是<code>8</code>的倍数<ul>
+<li>是则跳转<code>FLIP</code>进行翻转</li>
+</ul>
+</li>
+<li>上一步得到的<code>R3</code>并非余数，加上 10 才是余数<ul>
+<li>将其加上<code>2</code>之后进行判断（<code>+10 - 8 = 2)</code><ul>
+<li>若<code>R3 = 0</code> ，说明余数为<code>8</code>，跳转<code>FLIP</code>进行翻转</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用<code>ADD R2, R2, #0</code>判断<code>R2</code>的正负并跳转到对应标签</p>
+</li>
+<li><p>对于“<code>f(N) &lt;= 4096</code>”的约束</p>
+<ul>
+<li>在结尾存储了<code>MAX_VALUE</code>和<code>MAX_VALUE_N</code>两个值<ul>
+<li>前者为最大值<code>#4096</code>，后者是其负数<code>#-4096</code></li>
+<li>起始时分别存入<code>R7</code>和<code>R6</code></li>
+</ul>
+</li>
+<li>使用了<code>CHECK_MAX</code>和<code>MAXX_ADD</code>两个标签<ul>
+<li>前者使用<code>ADD R1, R1, R6</code>判断当前计算结果是否超出最大值<ul>
+<li>若超出则循环减去<code>4096</code></li>
+<li>当<code>R1 = 0</code>时，进入正常操作范围，跳转到<code>CHECK</code></li>
+<li>当指令使得<code>R1 &lt; 0</code>时，进入<code>MAX_ADD</code></li>
+</ul>
+</li>
+<li>后者只能从前者跳转进入<ul>
+<li>作用是为<code>R1</code>加上<code>4096</code>使得其回到正常操作范围</li>
+<li>接着跳转到<code>CHECK</code>正常操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>对于计算结束时机的判断</p>
+<ul>
+<li>直接对<code>R1</code>中存储的<code>N</code>的值进行递减<ul>
+<li>此时将<code>N</code>视为我们剩下还需要操作的次数</li>
+</ul>
+</li>
+<li>初始化时减一次</li>
+<li>之后每次调用<code>CHECK时</code>都递减一次</li>
+<li>当<code>R1 = 0</code>时，说明我们接下来不需要再向后进行计算，结束操作</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p><code>v2</code>版本代码较<code>v1</code>的主要改动为模运算的循环部分，通过设置梯度来提高计算速率，详见后文</p>
+</li>
+</ul>
+<h2 id="汇编代码"><a href="#汇编代码" class="headerlink" title="汇编代码"></a>汇编代码</h2><pre><code>最终用于评价的代码请取`Vertion 2`
+由于`Vertion 1`的表述比较清晰，且两版本的实现方式类似，
+故这里把`ver 1`的汇编码也给出
+</code></pre>
+<h3 id="Vertion-1-未优化循环的算法"><a href="#Vertion-1-未优化循环的算法" class="headerlink" title="Vertion 1 未优化循环的算法"></a>Vertion 1 未优化循环的算法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line">.ORIG x3000</span><br><span class="line">    LDI R0, N_ADRESS ; Load the value of N from memory location x3102 into R0</span><br><span class="line">    LD R7, MAX_VALUE ; Load the MAX value</span><br><span class="line">    LD R6, MAX_VALUE_N ; Load the Negative MAX value</span><br><span class="line"></span><br><span class="line">    AND R1, R1, #0   ; Clear R1</span><br><span class="line">    AND R2, R2, #0   ; Clear R2</span><br><span class="line">    ADD R1, R1, #3   ; Set the value of v_1 into R1</span><br><span class="line">    ADD R2, R2, #1   ; Set the value of d_1 into R2</span><br><span class="line"></span><br><span class="line">    ADD R0, R0, #-1  ; When N = 1</span><br><span class="line">    BRz END          ; Finish</span><br><span class="line">    BRp POSITIVE     ; N &gt; 1</span><br><span class="line"></span><br><span class="line">NEGATIVE</span><br><span class="line">    ADD R1, R1, R1   ; v_next = 2 * v_n</span><br><span class="line">    ADD R1, R1, #-2  ; v_next = v_next - 2</span><br><span class="line">    BRnzp CHECK_MAX  ; Branch to CHECK_MAX</span><br><span class="line"></span><br><span class="line">POSITIVE</span><br><span class="line">    ADD R1, R1, R1   ; v_next = 2 * v_n</span><br><span class="line">    ADD R1, R1, #2   ; v_next = v_next + 2</span><br><span class="line">    BRnzp CHECK_MAX  ; Check if R1 is in normal range</span><br><span class="line"></span><br><span class="line">; ---------------------------------------------------------------------</span><br><span class="line">CHECK</span><br><span class="line">    ADD R0, R0, #-1  ; N = N - 1      An operation was done</span><br><span class="line">    BRz END          ; Finish</span><br><span class="line"></span><br><span class="line">    AND R3, R3, #0   ; Clear R3</span><br><span class="line">    AND R4, R4, #0   ; Clear R4</span><br><span class="line">    ADD R3, R1, #0   ; Copy v_next to R3</span><br><span class="line">    ADD R4, R1, #0   ; Copy v_next to R4</span><br><span class="line">    BRnzp MODULO</span><br><span class="line"></span><br><span class="line">; R3 mod 10 And mod 8</span><br><span class="line">MODULO</span><br><span class="line">    ADD R4, R4, #-8   ; R4 = R4 - 8</span><br><span class="line">    ADD R3, R3, #-10  ; R3 = R3 - 10</span><br><span class="line">    BRnz MODULO_EXTRA ; Mod 10 is faster than 8</span><br><span class="line">    BRp MODULO        ; Branch back to MODULO    Loop</span><br><span class="line"></span><br><span class="line">; Deal with mod 8</span><br><span class="line">MODULO_EXTRA</span><br><span class="line">    ADD R4, R4, #-8   ; Subtract 8 from R4</span><br><span class="line">    BRnz D_MODULO     ; If R4 &lt;= 0, branch to D_MODULO</span><br><span class="line">    BRp MODULO_EXTRA</span><br><span class="line"></span><br><span class="line">; Check the remainder</span><br><span class="line">D_MODULO</span><br><span class="line">    ADD R4, R4, #0   ; Check if result_n is 8 times</span><br><span class="line">    BRz FLIP</span><br><span class="line"></span><br><span class="line">    ADD R3, R3, #2   ; R3 stores the remainder now</span><br><span class="line">                     ; Check if the remainder is 8</span><br><span class="line">    BRz FLIP</span><br><span class="line"></span><br><span class="line">    ADD R2, R2, #0   ; Check the flip flag d_n</span><br><span class="line">    BRp POSITIVE</span><br><span class="line">    BRn NEGATIVE</span><br><span class="line"></span><br><span class="line">; ------------------------------------------------------------------------</span><br><span class="line">; Check if R1 is in normal range</span><br><span class="line">CHECK_MAX</span><br><span class="line">    ADD R1, R1, R6</span><br><span class="line">    BRp CHECK_MAX</span><br><span class="line">    BRz CHECK</span><br><span class="line">    BRn MAX_ADD</span><br><span class="line"></span><br><span class="line">; Add R1 to normal range</span><br><span class="line">MAX_ADD</span><br><span class="line">    ADD R1, R1, R7</span><br><span class="line">    BRp CHECK</span><br><span class="line">; --------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">FLIP</span><br><span class="line">    NOT R2, R2       ; Flip the bits of d_n</span><br><span class="line">    ADD R2, R2, #1   ; Add 1 to get the logical NOT of d_n</span><br><span class="line">    BRp POSITIVE</span><br><span class="line">    BRn NEGATIVE</span><br><span class="line"></span><br><span class="line">END</span><br><span class="line">    STI R1, RESULT   ; Store the value of v_next in memory location x3103</span><br><span class="line">    TRAP x25         ; HALT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MAX_VALUE .FILL #4096</span><br><span class="line">MAX_VALUE_N .FILL #-4096</span><br><span class="line">N_ADRESS .FILL x3102 ; Memory location for N</span><br><span class="line">RESULT .FILL x3103   ; Memory location for result</span><br><span class="line"></span><br><span class="line">.END</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Vertion-2-优化循环后的算法"><a href="#Vertion-2-优化循环后的算法" class="headerlink" title="Vertion 2 优化循环后的算法"></a>Vertion 2 优化循环后的算法</h3><p>最终用于评估的代码<br>具体优化方法见后文“<code>改进</code>”小节</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line">.ORIG x3000</span><br><span class="line">    LDI R0, N_ADRESS ; Load the value of N from memory location x3102 into R0</span><br><span class="line">    LD R7, MAX_VALUE ; Load the MAX value</span><br><span class="line">    LD R6, MAX_VALUE_N ; Load the Negative MAX value</span><br><span class="line"></span><br><span class="line">    AND R1, R1, #0   ; Clear R1</span><br><span class="line">    AND R2, R2, #0   ; Clear R2</span><br><span class="line">    ADD R1, R1, #3   ; Set the value of v_1 into R1</span><br><span class="line">    ADD R2, R2, #1   ; Set the value of d_1 into R2</span><br><span class="line"></span><br><span class="line">    ADD R0, R0, #-1  ; When N = 1</span><br><span class="line">    BRz END          ; Finish</span><br><span class="line">    BRp POSITIVE     ; N &gt; 1</span><br><span class="line"></span><br><span class="line">NEGATIVE</span><br><span class="line">    ADD R1, R1, R1   ; v_next = 2 * v_n</span><br><span class="line">    ADD R1, R1, #-2  ; v_next = v_next - 2</span><br><span class="line">    BRnzp CHECK_MAX  ; Branch to CHECK_MAX</span><br><span class="line"></span><br><span class="line">POSITIVE</span><br><span class="line">    ADD R1, R1, R1   ; v_next = 2 * v_n</span><br><span class="line">    ADD R1, R1, #2   ; v_next = v_next + 2</span><br><span class="line">    BRnzp CHECK_MAX  ; Check if R1 is in normal range</span><br><span class="line"></span><br><span class="line">; ---------------------------------------------------------------------</span><br><span class="line">CHECK</span><br><span class="line">    ADD R0, R0, #-1  ; N = N - 1      An operation was done</span><br><span class="line">    BRz END          ; Finish</span><br><span class="line"></span><br><span class="line">    AND R3, R3, #0   ; Clear R3</span><br><span class="line">    ADD R3, R1, #0   ; Copy v_next to R3</span><br><span class="line">    ADD R4, R2, #0   ; Copy d_next to R4</span><br><span class="line">    BRnzp MODULO</span><br><span class="line">; ----------------------------------------------------------------------</span><br><span class="line">; Faster R3 mod operation</span><br><span class="line">MODULO</span><br><span class="line">    LD R5, A_THOUSAND ; R5 &lt;- -1000</span><br><span class="line">    BRn MODULO_AT     ; while(R3 - 1000)</span><br><span class="line"></span><br><span class="line">; R3 mod 1000</span><br><span class="line">MODULO_AT</span><br><span class="line">    ADD R3, R3, R5     ; R3 = R3 - 1000</span><br><span class="line">    BRn AT_ADD</span><br><span class="line">    BRp MODULO_AT      ; Branch back to MODULO_AT    Loop</span><br><span class="line">    BRz D_MODULO_DIGIT ; R3 = #1000</span><br><span class="line"></span><br><span class="line">; R3 + 1000</span><br><span class="line">AT_ADD</span><br><span class="line">    NOT R5, R5         ; Flip the bits of R5</span><br><span class="line">    ADD R5, R5, #1     ; Add 1 to get the logical NOT of R5</span><br><span class="line">    ADD R3, R3, R5     ; R3 = R3 + 1000</span><br><span class="line">    LD R5, A_HUNDRED   ; R5 &lt;- -100</span><br><span class="line">    BRp MODULO_AH</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; R3 mod 100</span><br><span class="line">MODULO_AH</span><br><span class="line">    ADD R3, R3, R5    ; R3 = R3 - 100</span><br><span class="line">    BRn AH_ADD</span><br><span class="line">    BRp MODULO_AH     ; Branch back to MODULO_AH    Loop</span><br><span class="line">    BRz D_MODULO_DIGIT      ; R3 = #100</span><br><span class="line"></span><br><span class="line">; R3 + 100</span><br><span class="line">AH_ADD</span><br><span class="line">    NOT R5, R5         ; Flip the bits of R5</span><br><span class="line">    ADD R5, R5, #1     ; Add 1 to get the logical NOT of R5</span><br><span class="line">    ADD R3, R3, R5     ; R3 = R3 + 100</span><br><span class="line">    BRp MODULO_TEN</span><br><span class="line"></span><br><span class="line">; R3 mod 10</span><br><span class="line">MODULO_TEN</span><br><span class="line">    ADD R3, R3, #-10     ; R3 = R3 - 10</span><br><span class="line">    BRp MODULO_TEN       ; Branch back to MODULO_TEN    Loop</span><br><span class="line">    BRnz D_MODULO_DIGIT  ; R3 = #8 || #10</span><br><span class="line"></span><br><span class="line">; Check the remainder</span><br><span class="line">D_MODULO_DIGIT</span><br><span class="line">    ADD R3, R3, #2   ; R3 stores the remainder now</span><br><span class="line">                     ; Check if the remainder is 8</span><br><span class="line">    BRz FLIP</span><br><span class="line"></span><br><span class="line">    AND R3, R3, #0     ; Clear R3</span><br><span class="line">    ADD R3, R1, #0     ; R3 = R1</span><br><span class="line">    LD R5, CODE_MONKEY ; R5 &lt;- -1024</span><br><span class="line">    BRn MODULO_CM      ; while(R3 - 1024)</span><br><span class="line"></span><br><span class="line">; ------------------------------------------------------------------------</span><br><span class="line">; R3 mod 1024</span><br><span class="line">MODULO_CM</span><br><span class="line">    ADD R3, R3, R5    ; R3 = R3 - 1024</span><br><span class="line">    BRn CM_ADD</span><br><span class="line">    BRp MODULO_CM     ; Branch back to MODULO_CM    Loop</span><br><span class="line">    BRz D_MODULO      ; R3 = #1024</span><br><span class="line"></span><br><span class="line">; R3 + 1024</span><br><span class="line">CM_ADD</span><br><span class="line">    NOT R5, R5         ; Flip the bits of R5</span><br><span class="line">    ADD R5, R5, #1     ; Add 1 to get the logical NOT of R5</span><br><span class="line">    ADD R3, R3, R5     ; R3 = R3 + 1024</span><br><span class="line">    LD R5, YAO_ER_BA   ; R5 &lt;- -128</span><br><span class="line">    BRp MODULO_YEB</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">; R3 mod 128</span><br><span class="line">MODULO_YEB</span><br><span class="line">    ADD R3, R3, R5    ; R3 = R3 - 128</span><br><span class="line">    BRn YEB_ADD</span><br><span class="line">    BRp MODULO_YEB    ; Branch back to MODULO_YEB    Loop</span><br><span class="line">    BRz D_MODULO      ; R3 = #128</span><br><span class="line"></span><br><span class="line">; R3 + 128</span><br><span class="line">YEB_ADD</span><br><span class="line">    NOT R5, R5         ; Flip the bits of R5</span><br><span class="line">    ADD R5, R5, #1     ; Add 1 to get the logical NOT of R5</span><br><span class="line">    ADD R3, R3, R5     ; R3 = R3 + 128</span><br><span class="line">    BRp MODULO_EIGHT</span><br><span class="line"></span><br><span class="line">; R3 mod 8</span><br><span class="line">MODULO_EIGHT</span><br><span class="line">    ADD R3, R3, #-8   ; R3 = R3 - 8</span><br><span class="line">    BRp MODULO_EIGHT  ; Branch back to MODULO_EIGHT  Loop</span><br><span class="line">    ADD R3, R3, #-2   ; R3 = R3 - 2     When R3 is 0, Set it to -2</span><br><span class="line">    BRnz D_MODULO     ; R3 &lt;= #8</span><br><span class="line"></span><br><span class="line">; ------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">; Check the remainder</span><br><span class="line">D_MODULO</span><br><span class="line">    ADD R3, R3, #2   ; R3 stores the remainder now</span><br><span class="line">                     ; Check if the remainder is 8</span><br><span class="line">    BRz FLIP</span><br><span class="line"></span><br><span class="line">    ADD R2, R2, #0   ; Check the flip flag d_n</span><br><span class="line">    BRp POSITIVE</span><br><span class="line">    BRn NEGATIVE</span><br><span class="line"></span><br><span class="line">; ------------------------------------------------------------------------</span><br><span class="line">; Check if R1 is in normal range</span><br><span class="line">CHECK_MAX</span><br><span class="line">    ADD R1, R1, R6</span><br><span class="line">    BRp CHECK_MAX</span><br><span class="line">    BRz CHECK</span><br><span class="line">    BRn MAX_ADD</span><br><span class="line"></span><br><span class="line">; Add R1 to normal range</span><br><span class="line">MAX_ADD</span><br><span class="line">    ADD R1, R1, R7</span><br><span class="line">    BRp CHECK</span><br><span class="line">; --------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">FLIP</span><br><span class="line">    NOT R2, R2       ; Flip the bits of d_n</span><br><span class="line">    ADD R2, R2, #1   ; Add 1 to get the logical NOT of d_n</span><br><span class="line">    BRp POSITIVE</span><br><span class="line">    BRn NEGATIVE</span><br><span class="line"></span><br><span class="line">END</span><br><span class="line">    STI R1, RESULT   ; Store the value of v_next in memory location x3103</span><br><span class="line">    TRAP x25         ; HALT</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">MAX_VALUE   .FILL #4096</span><br><span class="line">MAX_VALUE_N .FILL #-4096</span><br><span class="line">A_THOUSAND  .FILL #-1000</span><br><span class="line">A_HUNDRED   .FILL #-100</span><br><span class="line">CODE_MONKEY .FILL #-1024</span><br><span class="line">YAO_ER_BA   .FILL #-128</span><br><span class="line">N_ADRESS    .FILL x3102 ; Memory location for N</span><br><span class="line">RESULT      .FILL x3103   ; Memory location for result</span><br><span class="line"></span><br><span class="line">.END</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>在线进行了提交测试，样例全部通过，且优化后的算法<code>ver 2</code>提交后的响应速度明显快于<code>ver 1</code></p>
+<h3 id="Lab2-提交结果"><a href="#Lab2-提交结果" class="headerlink" title="Lab2 提交结果"></a>Lab2 提交结果</h3><p><img src="/study/.io//Lab2.png" alt="Alt text"></p>
+<h3 id="Lab2-light-提交结果"><a href="#Lab2-light-提交结果" class="headerlink" title="Lab2 light 提交结果"></a>Lab2 light 提交结果</h3><p><img src="/study/.io//Lab2_light.png" alt="Alt text"></p>
+<h2 id="改进"><a href="#改进" class="headerlink" title="改进"></a>改进</h2><ol>
+<li><p>在进行模运算循环时，以模十举例</p>
+<ul>
+<li>考虑到我们的乒乓序列每次操作都会把原数倍增，数值增长得很快</li>
+<li>故我们可以在<code>MODULO</code>模块中增大减数的步长，上调到其的<code>n次方</code></li>
+<li>设置为其它倍也可以</li>
+<li>例如，下面我们尝试计算<code>128 mod 10</code><ul>
+<li>当步长为<code>n次方</code>时<ul>
+<li>假设步长设为<code>100</code>，</li>
+<li>一次减得<code>28</code>，步长改为<code>10</code>，之后的处理与直接<code>mod 10</code>一样，但速度更快</li>
+</ul>
+</li>
+<li>当步长为某倍时<ul>
+<li>假设步长为<code>30</code></li>
+<li>减五次得<code>-22</code></li>
+<li>加回步长得<code>8</code>，接下来回到正常<code>mod 10</code>的操作<ul>
+<li>循环减<code>10</code>直到小于零，再加回正数即得余数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>经过上面的分析后我们发现，还可以进一步加速计算</p>
+<ul>
+<li>将模<code>8</code>与模<code>10</code>操作分开，我们就能拥有两个空闲寄存器<ul>
+<li>同时，这样处理之后，当满足其中一种翻转情况时，可以减少不必要的循环操作</li>
+</ul>
+</li>
+<li>再将<code>R6</code>删除，<code>R7</code>存储<code>#4096</code>，并借鉴<code>FLIP</code>标签的方法求<code>-R7</code>的值</li>
+<li>这样我们就有了三个空闲寄存器<code>R4、R5、R6</code>来存储值（其实一个即可）</li>
+<li>之后我们可以为模运算设置梯度减数<ul>
+<li>例如设置<code>1000、100、20</code>三个梯度，在三个标签中进行减法运算</li>
+<li>三个梯度的值（下称“梯度模数”）存储在地址中</li>
+<li>需要进行操作时从地址中将对应的“梯度模数”读入</li>
+<li>例如，我们想求<code>#3659</code>的余数<ul>
+<li>先进入<code>模1000</code>标签，<ul>
+<li>从地址中读取<code>1000</code>到寄存器中</li>
+<li>循环减去这个值</li>
+<li>直到得到负数</li>
+</ul>
+</li>
+<li>再进入<code>模100</code>标签，<ul>
+<li>先利用寄存器内的值（现在还是<code>1000</code>）与待操作数相加，得到<code>659</code></li>
+<li>再从地址中读取<code>100</code>到寄存器中</li>
+<li>循环减去这个值</li>
+<li>直到得到负数</li>
+</ul>
+</li>
+<li>再进入<code>模20</code>标签，<ul>
+<li>先利用寄存器内的值（现在还是<code>100</code>）与待操作数相加，得到<code>59</code></li>
+<li>再从地址中读取<code>20</code>到寄存器中</li>
+<li>循环减去这个值</li>
+<li>直到得到负数</li>
+</ul>
+</li>
+<li>进入我们上面所说的<code>ADD_TO_P</code>标签<ul>
+<li>将待操作数与<code>10</code>循环相加，直到得到正数</li>
+<li>此时就得到了余数（这里是<code>1</code>）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>分析，在上面的改进算法中，对于加减法运算<ul>
+<li>第一个步骤进行了<code>4</code>步</li>
+<li>第二个步骤进行了<code>1 + 7</code>步</li>
+<li>第三个步骤进行了<code>1 + 3</code>步</li>
+<li>第四个步骤进行了<code>1</code>步</li>
+<li>总共需要进行<code>4 + 8 + 4 + 1 = 17</code>次加减法运算</li>
+</ul>
+</li>
+<li>而对于原来的<code>mod 10</code>算法<ul>
+<li>每次减去<code>10</code>，我们总共需要减去<code>366</code>次</li>
+<li>最后再把<code>10</code>加回来，需要进行<code>1</code>次</li>
+<li>总共需要进行<code>366 + 1 = 367</code>次加减法运算</li>
+</ul>
+</li>
+<li>显然，从这个例子来看，仅考虑加减法运算次数的情况下，设置梯度后的算法比原来的算法快 了 20 余倍</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>综上所述，我们可以通过增大模运算时的<code>减数</code>或者设置<code>减数梯度</code>来提高循环的效率，加快运算速度。其中，后者对于效率的提升尤为显著</p>
+</li>
+<li><p>改进后的程序见<code>汇编代码</code>小节的<code>vertion 2</code></p>
+</li>
+<li><p>实际在<code>LC3 Simulator</code>网站上进行测试时，发现只考虑余数是否为<code>8</code>而不考虑是否为<code>8</code>的倍数同样可以用通过测试，如果确实没有这方面需求，可以把相应功能删除，程序的速度和效率会再快一倍</p>
+</li>
+</ol>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/Lab/">LAB</a></li>
+          <li>LAB2</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

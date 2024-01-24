@@ -55,6 +55,15 @@
   <noscript>
     <link rel="stylesheet" href="/study/css/noscript.css">
   </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -93,7 +102,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
   </ul>
 </nav>
 
@@ -131,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/study/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -217,78 +226,78 @@
       
       <div class="post-body">
           <p>妮可部分常用网站合集</p>
-<p><a href=https://www.teach.ustc.edu.cn/category/calendar rel="noopener noreferrer" target=_blank class=external-link>教学日历</a></p>
-<p><a href=https://jw.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>教务系统</a></p>
-<p><a href=http://lib.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>校图书馆</a></p>
-<p><a href=http://opac.lib.ustc.edu.cn/opac/search_adv.php#/index rel="noopener noreferrer" target=_blank class=external-link>校图书馆检索系统</a></p>
-<p><a href=http://www.tj.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>体育教学中心网</a></p>
-<p><a href=http://cscourse.ustc.edu.cn/acm/index.jsp rel="noopener noreferrer" target=_blank class=external-link>Online Judge</a></p>
-<p><a href=https://www.teach.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>教务处</a></p>
-<p><a href=http://ahadl.org/ rel="noopener noreferrer" target=_blank class=external-link>安徽省高校数字图书馆</a></p>
-<p><a href=https://catalog.ustc.edu.cn/query/ rel="noopener noreferrer" target=_blank class=external-link>公共查询</a>(<a href=https://catalog.ustc.edu.cn/query/lesson rel="noopener noreferrer" target=_blank class=external-link>课</a>，<a href=https://catalog.ustc.edu.cn/query/exam rel="noopener noreferrer" target=_blank class=external-link>考试</a>，<a href=https://catalog.ustc.edu.cn/query/classroom rel="noopener noreferrer" target=_blank class=external-link>教室</a>)</p>
-<p><a href=http://cet-bm.neea.edu.cn/Index rel="noopener noreferrer" target=_blank class=external-link>英语四六级考试报名</a></p>
-<p><a href=https://cet.neea.edu.cn/cet/ rel="noopener noreferrer" target=_blank class=external-link>英语四六级考试成绩查询</a></p>
-<p><a href=http://sgas.ustc.edu.cn/auth/login rel="noopener noreferrer" target=_blank class=external-link>成绩画像</a></p>
-<p><a href=https://icourse.club/ rel="noopener noreferrer" target=_blank class=external-link>评课社区</a></p>
-<p><a href=http://202.38.65.52/xyzd/ rel="noopener noreferrer" target=_blank class=external-link>学业指导中心</a></p>
-<p><a href=https://vista.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>全球化学习平台</a></p>
-<p><a href=https://ipb.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>预约系统 - 中区创新实践基地</a></p>
-<p><a href=http://roombooking.cmet.ustc.edu.cn/#/index rel="noopener noreferrer" target=_blank class=external-link>预约系统 - 中区</a></p>
-<p><a href="http://ic.lib.ustc.edu.cn/clientweb/xcus/ic2/Default.aspx?page=center" rel="noopener noreferrer" target=_blank class=external-link>预约系统 - 西区</a></p>
-<p><a href=https://hs.lib.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>预约系统 - 高新区</a></p>
-<p><a href=http://pems.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>大雾系统</a></p>
-<p><a href=https://www.icourses.cn/sCourse/course_3059.html rel="noopener noreferrer" target=_blank class=external-link>大雾实验视频</a></p>
-<p><a href=http://home.ustc.edu.cn/~yx3x/USTCdata.html rel="noopener noreferrer" target=_blank class=external-link>USTC 学习资料</a> (含大雾模板)</p>
-<p><a href=https://idp.ustc.edu.cn/idp/ rel="noopener noreferrer" target=_blank class=external-link>跨校资源认证中心</a></p>
-<p><a href=https://www.bb.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>BlackBoard (bb 系统)</a></p>
-<p><a href=https://course.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>瀚海教学网</a></p>
-<p><a href=https://rec.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>睿客网</a></p>
-<p><a href=https://www.teach.ustc.edu.cn/notice/notice-teaching/14496.html/attachment/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%EF%BC%88%E8%AE%BE%E8%AE%A1%EF%BC%89%E6%A0%BC%E5%BC%8F rel="noopener noreferrer" target=_blank class=external-link>毕业论文模板</a></p>
-<p><a href=https://www.ustcflyer.com/welcome rel="noopener noreferrer" target=_blank class=external-link>USTC flyer</a></p>
-<p><a href=https://vlab.ustc.edu.cn/guide/doc_verilog.html rel="noopener noreferrer" target=_blank class=external-link>Verilog 教程</a></p>
-<p><a href=https://detexify.kirelabs.org/classify.html rel="noopener noreferrer" target=_blank class=external-link><span><span class=katex><span class=katex-mathml><math xmlns=http://www.w3.org/1998/Math/MathML><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding=application/x-tex>\LaTeX</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:0.89883em;vertical-align:-0.2155em></span><span class="mord text"><span class="mord textrm">L</span><span class=mspace style=margin-right:-0.36em></span><span class=vlist-t><span class=vlist-r><span class=vlist style=height:0.68333em><span style=top:-2.905em><span class=pstrut style=height:2.7em></span><span class=mord><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class=mspace style=margin-right:-0.15em></span><span class="mord text"><span class="mord textrm">T</span><span class=mspace style=margin-right:-0.1667em></span><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:0.46783em><span style=top:-2.7845em><span class=pstrut style=height:3em></span><span class=mord><span class="mord textrm">E</span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:0.2155em><span></span></span></span></span><span class=mspace style=margin-right:-0.125em></span><span class="mord textrm">X</span></span></span></span></span></span></span> 符号识别</a></p>
-<p><a href=https://www.cs.usfca.edu/~galles/visualization/Algorithms.html rel="noopener noreferrer" target=_blank class=external-link>数据结构可视化</a></p>
-<p><a href=https://missing.csail.mit.edu/2020/ rel="noopener noreferrer" target=_blank class=external-link>Missing Semester</a></p>
-<h2 id=工具>🛠️ 工具<a class=anchor href=#%E5%B7%A5%E5%85%B7></a></h2>
-<p><a href=https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg rel="noopener noreferrer" target=_blank class=external-link>校园地图</a></p>
-<p><a href=https://wvpn.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>校内 VPN</a></p>
-<p><a href=http://wlt.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>网络通</a></p>
-<p><a href=http://bigscreen.cmet.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>大屏课表</a></p>
-<p><a href=https://www.ustc.edu.cn/ggfw/xxcx.htm rel="noopener noreferrer" target=_blank class=external-link>校园班车运行时刻表</a></p>
-<p><a href=https://ecard.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>一卡通</a></p>
-<p><a href=https://weixine.ustc.edu.cn/2020 rel="noopener noreferrer" target=_blank class=external-link>科大健康打卡</a></p>
-<p><a href=https://passport.ustc.edu.cn/login rel="noopener noreferrer" target=_blank class=external-link>统一身份认证系统</a></p>
-<p><a href=https://mail.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>邮箱</a></p>
-<p><a href=http://map.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>校内导航</a></p>
-<p><a href=https://ms.ustc.edu.cn/zbh.php rel="noopener noreferrer" target=_blank class=external-link>正版软件</a></p>
-<p><a href=https://app.diagrams.net/ rel="noopener noreferrer" target=_blank class=external-link>流程图绘制</a></p>
-<p><a href=https://excalidraw.com/ rel="noopener noreferrer" target=_blank class=external-link>手绘风格流程图</a></p>
-<p><a href="https://720yun.com/t/96vkbw7q77w?scene_id=91152512" rel="noopener noreferrer" target=_blank class=external-link>USTC 全景</a></p>
-<p><a href=https://www.typingtom.com/lessons rel="noopener noreferrer" target=_blank class=external-link>打字练习</a></p>
-<p><a href=https://developer.android.google.cn/studio/releases/platform-tools#downloads rel="noopener noreferrer" target=_blank class=external-link>ADB 工具下载</a></p>
-<h2 id=国际视野>🌐 国际视野<a class=anchor href=#%E5%9B%BD%E9%99%85%E8%A7%86%E9%87%8E></a></h2>
-<p><a href=https://www.un.org/zh/ rel="noopener noreferrer" target=_blank class=external-link>联合国</a></p>
-<p><a href=https://www.who.int/zh/home rel="noopener noreferrer" target=_blank class=external-link>世卫组织</a></p>
-<h2 id=其他>🧶 其他<a class=anchor href=#%E5%85%B6%E4%BB%96></a></h2>
-<p><a href=https://ustcforum.com/ rel="noopener noreferrer" target=_blank class=external-link>南七茶馆</a></p>
-<p><a href=https://lug.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>LUG</a></p>
-<p><a href=https://ysjt.ustc.edu.cn/main.htm rel="noopener noreferrer" target=_blank class=external-link>饮食服务集团</a></p>
-<p><a href=http://smile.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>心理咨询中心</a></p>
-<p><a href=http://news.ustc.edu.cn/yxkd1/tskd.htm rel="noopener noreferrer" target=_blank class=external-link>图说科大</a></p>
-<p><a href=http://ns4.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>网络流量监控</a></p>
-<p><a href=https://vi.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>科大文化网</a></p>
-<p><a href=http://www.ustcbbq.com/ rel="noopener noreferrer" target=_blank class=external-link>蜗壳表白墙</a></p>
-<p><a href=https://welcome.ustc.edu.cn/yinshi/statistics rel="noopener noreferrer" target=_blank class=external-link>食堂就餐人数统计</a></p>
-<p><a href=http://young.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>青春科大（第二课堂）</a></p>
-<p><a href=http://news.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>科大新闻</a></p>
-<p><a href=https://linux.ustc.edu.cn/ap/ rel="noopener noreferrer" target=_blank class=external-link>无线AP分布图</a></p>
-<p><a href=http://teacher.cucdc.com/laoshi/department/3909.html rel="noopener noreferrer" target=_blank class=external-link>教师检索</a></p>
-<p><a href=http://home.ustc.edu.cn/~pro/ rel="noopener noreferrer" target=_blank class=external-link>我的ftp</a></p>
-<p><a href=https://finance.ustc.edu.cn/2012/0902/c21820a440894/page.htm rel="noopener noreferrer" target=_blank class=external-link>学校收费标准</a></p>
-<p><a href=http://stuhome.ustc.edu.cn/mainm.htm rel="noopener noreferrer" target=_blank class=external-link>学工在线</a></p>
-<p><a href=http://xgyth.ustc.edu.cn/ rel="noopener noreferrer" target=_blank class=external-link>学工一体化系统</a></p>
-<p><a href=https://linux.ustc.edu.cn/mymrtg/ rel="noopener noreferrer" target=_blank class=external-link>接口流量统计</a></p>
-<p><a href=https://docs.qq.com/sheet/DZHJqRXZESER2aWJM rel="noopener noreferrer" target=_blank class=external-link>夜宵黑白名单</a></p>
+<p><a href="https://www.teach.ustc.edu.cn/category/calendar" rel="noopener noreferrer" target="_blank" class="external-link">教学日历</a></p>
+<p><a href="https://jw.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">教务系统</a></p>
+<p><a href="http://lib.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">校图书馆</a></p>
+<p><a href="http://opac.lib.ustc.edu.cn/opac/search_adv.php#/index" rel="noopener noreferrer" target="_blank" class="external-link">校图书馆检索系统</a></p>
+<p><a href="http://www.tj.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">体育教学中心网</a></p>
+<p><a href="http://cscourse.ustc.edu.cn/acm/index.jsp" rel="noopener noreferrer" target="_blank" class="external-link">Online Judge</a></p>
+<p><a href="https://www.teach.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">教务处</a></p>
+<p><a href="http://ahadl.org/" rel="noopener noreferrer" target="_blank" class="external-link">安徽省高校数字图书馆</a></p>
+<p><a href="https://catalog.ustc.edu.cn/query/" rel="noopener noreferrer" target="_blank" class="external-link">公共查询</a>(<a href="https://catalog.ustc.edu.cn/query/lesson" rel="noopener noreferrer" target="_blank" class="external-link">课</a>，<a href="https://catalog.ustc.edu.cn/query/exam" rel="noopener noreferrer" target="_blank" class="external-link">考试</a>，<a href="https://catalog.ustc.edu.cn/query/classroom" rel="noopener noreferrer" target="_blank" class="external-link">教室</a>)</p>
+<p><a href="http://cet-bm.neea.edu.cn/Index" rel="noopener noreferrer" target="_blank" class="external-link">英语四六级考试报名</a></p>
+<p><a href="https://cet.neea.edu.cn/cet/" rel="noopener noreferrer" target="_blank" class="external-link">英语四六级考试成绩查询</a></p>
+<p><a href="http://sgas.ustc.edu.cn/auth/login" rel="noopener noreferrer" target="_blank" class="external-link">成绩画像</a></p>
+<p><a href="https://icourse.club/" rel="noopener noreferrer" target="_blank" class="external-link">评课社区</a></p>
+<p><a href="http://202.38.65.52/xyzd/" rel="noopener noreferrer" target="_blank" class="external-link">学业指导中心</a></p>
+<p><a href="https://vista.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">全球化学习平台</a></p>
+<p><a href="https://ipb.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">预约系统 - 中区创新实践基地</a></p>
+<p><a href="http://roombooking.cmet.ustc.edu.cn/#/index" rel="noopener noreferrer" target="_blank" class="external-link">预约系统 - 中区</a></p>
+<p><a href="http://ic.lib.ustc.edu.cn/clientweb/xcus/ic2/Default.aspx?page=center" rel="noopener noreferrer" target="_blank" class="external-link">预约系统 - 西区</a></p>
+<p><a href="https://hs.lib.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">预约系统 - 高新区</a></p>
+<p><a href="http://pems.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">大雾系统</a></p>
+<p><a href="https://www.icourses.cn/sCourse/course_3059.html" rel="noopener noreferrer" target="_blank" class="external-link">大雾实验视频</a></p>
+<p><a href="http://home.ustc.edu.cn/~yx3x/USTCdata.html" rel="noopener noreferrer" target="_blank" class="external-link">USTC 学习资料</a> (含大雾模板)</p>
+<p><a href="https://idp.ustc.edu.cn/idp/" rel="noopener noreferrer" target="_blank" class="external-link">跨校资源认证中心</a></p>
+<p><a href="https://www.bb.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">BlackBoard (bb 系统)</a></p>
+<p><a href="https://course.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">瀚海教学网</a></p>
+<p><a href="https://rec.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">睿客网</a></p>
+<p><a href="https://www.teach.ustc.edu.cn/notice/notice-teaching/14496.html/attachment/%E4%B8%AD%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E5%A4%A7%E5%AD%A6%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%EF%BC%88%E8%AE%BE%E8%AE%A1%EF%BC%89%E6%A0%BC%E5%BC%8F" rel="noopener noreferrer" target="_blank" class="external-link">毕业论文模板</a></p>
+<p><a href="https://www.ustcflyer.com/welcome" rel="noopener noreferrer" target="_blank" class="external-link">USTC flyer</a></p>
+<p><a href="https://vlab.ustc.edu.cn/guide/doc_verilog.html" rel="noopener noreferrer" target="_blank" class="external-link">Verilog 教程</a></p>
+<p><a href="https://detexify.kirelabs.org/classify.html" rel="noopener noreferrer" target="_blank" class="external-link"><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>LaTeX</mtext></mrow><annotation encoding="application/x-tex">\LaTeX</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.89883em;vertical-align:-0.2155em"></span><span class="mord text"><span class="mord textrm">L</span><span class="mspace" style="margin-right:-0.36em"></span><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.68333em"><span style="top:-2.905em"><span class="pstrut" style="height:2.7em"></span><span class="mord"><span class="mord textrm mtight sizing reset-size6 size3">A</span></span></span></span></span></span><span class="mspace" style="margin-right:-0.15em"></span><span class="mord text"><span class="mord textrm">T</span><span class="mspace" style="margin-right:-0.1667em"></span><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.46783em"><span style="top:-2.7845em"><span class="pstrut" style="height:3em"></span><span class="mord"><span class="mord textrm">E</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2155em"><span></span></span></span></span><span class="mspace" style="margin-right:-0.125em"></span><span class="mord textrm">X</span></span></span></span></span></span></span> 符号识别</a></p>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" rel="noopener noreferrer" target="_blank" class="external-link">数据结构可视化</a></p>
+<p><a href="https://missing.csail.mit.edu/2020/" rel="noopener noreferrer" target="_blank" class="external-link">Missing Semester</a></p>
+<h2 id="工具">🛠️ 工具<a class="anchor" href="#%E5%B7%A5%E5%85%B7"></a></h2>
+<p><a href="https://www.ustc.edu.cn/__local/7/CA/83/51C921501F45CC7F22C3E32B9C3_85DD6C3B_196F20.jpg" rel="noopener noreferrer" target="_blank" class="external-link">校园地图</a></p>
+<p><a href="https://wvpn.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">校内 VPN</a></p>
+<p><a href="http://wlt.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">网络通</a></p>
+<p><a href="http://bigscreen.cmet.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">大屏课表</a></p>
+<p><a href="https://www.ustc.edu.cn/ggfw/xxcx.htm" rel="noopener noreferrer" target="_blank" class="external-link">校园班车运行时刻表</a></p>
+<p><a href="https://ecard.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">一卡通</a></p>
+<p><a href="https://weixine.ustc.edu.cn/2020" rel="noopener noreferrer" target="_blank" class="external-link">科大健康打卡</a></p>
+<p><a href="https://passport.ustc.edu.cn/login" rel="noopener noreferrer" target="_blank" class="external-link">统一身份认证系统</a></p>
+<p><a href="https://mail.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">邮箱</a></p>
+<p><a href="http://map.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">校内导航</a></p>
+<p><a href="https://ms.ustc.edu.cn/zbh.php" rel="noopener noreferrer" target="_blank" class="external-link">正版软件</a></p>
+<p><a href="https://app.diagrams.net/" rel="noopener noreferrer" target="_blank" class="external-link">流程图绘制</a></p>
+<p><a href="https://excalidraw.com/" rel="noopener noreferrer" target="_blank" class="external-link">手绘风格流程图</a></p>
+<p><a href="https://720yun.com/t/96vkbw7q77w?scene_id=91152512" rel="noopener noreferrer" target="_blank" class="external-link">USTC 全景</a></p>
+<p><a href="https://www.typingtom.com/lessons" rel="noopener noreferrer" target="_blank" class="external-link">打字练习</a></p>
+<p><a href="https://developer.android.google.cn/studio/releases/platform-tools#downloads" rel="noopener noreferrer" target="_blank" class="external-link">ADB 工具下载</a></p>
+<h2 id="国际视野">🌐 国际视野<a class="anchor" href="#%E5%9B%BD%E9%99%85%E8%A7%86%E9%87%8E"></a></h2>
+<p><a href="https://www.un.org/zh/" rel="noopener noreferrer" target="_blank" class="external-link">联合国</a></p>
+<p><a href="https://www.who.int/zh/home" rel="noopener noreferrer" target="_blank" class="external-link">世卫组织</a></p>
+<h2 id="其他">🧶 其他<a class="anchor" href="#%E5%85%B6%E4%BB%96"></a></h2>
+<p><a href="https://ustcforum.com/" rel="noopener noreferrer" target="_blank" class="external-link">南七茶馆</a></p>
+<p><a href="https://lug.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">LUG</a></p>
+<p><a href="https://ysjt.ustc.edu.cn/main.htm" rel="noopener noreferrer" target="_blank" class="external-link">饮食服务集团</a></p>
+<p><a href="http://smile.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">心理咨询中心</a></p>
+<p><a href="http://news.ustc.edu.cn/yxkd1/tskd.htm" rel="noopener noreferrer" target="_blank" class="external-link">图说科大</a></p>
+<p><a href="http://ns4.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">网络流量监控</a></p>
+<p><a href="https://vi.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">科大文化网</a></p>
+<p><a href="http://www.ustcbbq.com/" rel="noopener noreferrer" target="_blank" class="external-link">蜗壳表白墙</a></p>
+<p><a href="https://welcome.ustc.edu.cn/yinshi/statistics" rel="noopener noreferrer" target="_blank" class="external-link">食堂就餐人数统计</a></p>
+<p><a href="http://young.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">青春科大（第二课堂）</a></p>
+<p><a href="http://news.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">科大新闻</a></p>
+<p><a href="https://linux.ustc.edu.cn/ap/" rel="noopener noreferrer" target="_blank" class="external-link">无线AP分布图</a></p>
+<p><a href="http://teacher.cucdc.com/laoshi/department/3909.html" rel="noopener noreferrer" target="_blank" class="external-link">教师检索</a></p>
+<p><a href="http://home.ustc.edu.cn/~pro/" rel="noopener noreferrer" target="_blank" class="external-link">我的ftp</a></p>
+<p><a href="https://finance.ustc.edu.cn/2012/0902/c21820a440894/page.htm" rel="noopener noreferrer" target="_blank" class="external-link">学校收费标准</a></p>
+<p><a href="http://stuhome.ustc.edu.cn/mainm.htm" rel="noopener noreferrer" target="_blank" class="external-link">学工在线</a></p>
+<p><a href="http://xgyth.ustc.edu.cn/" rel="noopener noreferrer" target="_blank" class="external-link">学工一体化系统</a></p>
+<p><a href="https://linux.ustc.edu.cn/mymrtg/" rel="noopener noreferrer" target="_blank" class="external-link">接口流量统计</a></p>
+<p><a href="https://docs.qq.com/sheet/DZHJqRXZESER2aWJM" rel="noopener noreferrer" target="_blank" class="external-link">夜宵黑白名单</a></p>
 
       </div>
       
@@ -312,7 +321,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

@@ -52,6 +52,15 @@
   <noscript>
     <link rel="stylesheet" href="/study/css/noscript.css">
   </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -90,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
   </ul>
 </nav>
 
@@ -127,7 +136,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/study/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -172,6 +181,251 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/12/12/B%E7%AB%99%E6%89%BE%E5%88%B0%E5%A4%B1%E6%95%88%E8%A7%86%E9%A2%91%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/study/images/avatar.gif">
+      <meta itemprop="name" content="magichear">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Klevenna">
+      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Klevenna">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/study/2023/12/12/B%E7%AB%99%E6%89%BE%E5%88%B0%E5%A4%B1%E6%95%88%E8%A7%86%E9%A2%91%E5%90%8D%E5%AD%97%E7%9A%84%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">B站找到失效视频名字的方法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-12-12 16:11:13 / 修改时间：16:11:30" itemprop="dateCreated datePublished" datetime="2023-12-12T16:11:13+08:00">2023-12-12</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>好好好，<br>b 站收藏夹里的已失效视频可以在开发者窗口看到信息<br>（打开那个收藏夹之后搜索 list？media 打头的条目，点开找到响应栏目，刷新收藏夹，就可以看到包括失效视频在内的所有视频的名称、up 主名字之类的），<br>虽然没办法看到失效视频，但是可以找到发那个视频的 up 主，而且可以知道到底是什么视频失效了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/11/20/%E6%9C%BA%E5%99%A8%E7%A0%81%E4%B8%8D%E8%A6%81%E6%89%8B%E7%97%92%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/study/images/avatar.gif">
+      <meta itemprop="name" content="magichear">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Klevenna">
+      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Klevenna">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/study/2023/11/20/%E6%9C%BA%E5%99%A8%E7%A0%81%E4%B8%8D%E8%A6%81%E6%89%8B%E7%97%92%E5%8A%A0%E4%B8%8B%E5%88%92%E7%BA%BF/" class="post-title-link" itemprop="url">机器码不要手痒加下划线</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-20 19:07:13 / 修改时间：19:17:28" itemprop="dateCreated datePublished" datetime="2023-11-20T19:07:13+08:00">2023-11-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><code>ICS</code>的<code>Lab1</code>要求写机器码，由于完全<code>0</code>基础，并且教程稀少（为数不多的教程还是全英文的）写得很抓马</p>
+<p>后来改为先写汇编，再用工具转化为十六进制，最后手动翻译和眷写为二进制</p>
+<p>重点来了，汇编和机器码原先都测试通过，但是，放到报告里的时候不知道是手痒还是<code>vsc</code>抽风（估计是我手痒），给其中某一行加了三个下划线，提交的时候还没检查，最后助教用脚本测试的时候我的代码连编译都没过，代码正确性的<code>50分</code>一分都没有</p>
+<p>还好助教英俊潇洒通情达理（笑），填表解释之后给我加到了<code>85</code>分，救我一命</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/11/17/%E6%8F%90%E5%89%8D%E4%BD%93%E9%AA%8C%E7%A0%81%E5%86%9C%E7%94%9F%E6%B4%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/study/images/avatar.gif">
+      <meta itemprop="name" content="magichear">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Klevenna">
+      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Klevenna">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/study/2023/11/17/%E6%8F%90%E5%89%8D%E4%BD%93%E9%AA%8C%E7%A0%81%E5%86%9C%E7%94%9F%E6%B4%BB/" class="post-title-link" itemprop="url">提前体验码农生活</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-17 22:13:25 / 修改时间：22:27:46" itemprop="dateCreated datePublished" datetime="2023-11-17T22:13:25+08:00">2023-11-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li>这周一天一个实验，两个硬件、一个算法、一个汇编，除此之外还要写周常作业，周末还有考试<ul>
+<li>硬件每个三题，都要自己仿真和上板验证</li>
+<li>算法实验与二叉树有关<ul>
+<li>先序遍历创建、输出</li>
+<li>后序线索化二叉树</li>
+<li>编写后序线索化二叉树的遍历算法</li>
+<li>表达式树<ul>
+<li>波兰式、逆波兰式、中缀式、求值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>汇编实验是乒乓序列，不过代码的正确性只占<code>50%</code>，得卷报告。。。。。。<ul>
+<li>有点。。。。。。不好评价</li>
+<li>写了一个算法，因为报告要求有改进环节，于是通过设置梯度来优化了遍历算法<ul>
+<li>大概快了<code>20 倍</code></li>
+<li>测试的时候还发现一个特殊的情况，在那种情况下还可以再快<code>2倍</code></li>
+</ul>
+</li>
+<li>代码写了半下午，报告写了一晚上.jpg</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>下周一周时间要写一篇电磁论文，选题都没定，不过初步想做一些电磁相关的可视化<ul>
+<li>是的，妮可计算机还要学物理</li>
+</ul>
+</li>
+<li>而且下周还要写电磁一整章的作业，周四之前还要写完硬件实验（其它周常就不说了）</li>
+</ul>
+<p>上面只是目前已知的，下周可是还有可能再加任务的。。。。。。。</p>
+<p>一天睡六个小时不到，绝了</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -410,7 +664,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
 <p>当你第一次尝试通过 SSH 连接到 GitHub 时，你的计算机会询问你是否信任 GitHub 的服务器。这是一个常见的安全措施，用于防止中间人攻击。在这种情况下，你应该输入 “yes”，然后按回车键。这将把 GitHub 的服务器添加到你的计算机的已知主机列表中，以后你再连接到 GitHub 时就不会再看到这个提示了。</p>
-<p>如果你看到类似于 “Hi <username>! You’ve successfully authenticated, but GitHub does not provide shell access.” 的消息，那么你就已经成功地通过 SSH 连接到了 GitHub²。</p>
+<p>如果你看到类似于 “Hi <username>! You’ve successfully authenticated, but GitHub does not provide shell access.” 的消息，那么你就已经成功地通过 SSH 连接到了 GitHub²。</username></p>
 <ol start="5">
 <li><strong>启动 ssh-agent</strong>:<br>这个错误可能是因为 ssh-agent 服务没有启动 ¹。你可以尝试以管理员权限运行 PowerShell，然后手动启动服务 ¹。你可以通过以下命令来检查 ssh-agent 服务的状态 ¹：</li>
 </ol>
@@ -765,9 +1019,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-10-09 01:48:09 / 修改时间：01:49:54" itemprop="dateCreated datePublished" datetime="2023-10-09T01:48:09+08:00">2023-10-09</time>
+      <time title="创建时间：2023-10-09 01:48:09" itemprop="dateCreated datePublished" datetime="2023-10-09T01:48:09+08:00">2023-10-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-12-14 10:26:19" itemprop="dateModified" datetime="2023-12-14T10:26:19+08:00">2023-12-14</time>
     </span>
 
   
@@ -800,94 +1060,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://magichear.github.io/study/2023/10/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/study/images/avatar.gif">
-      <meta itemprop="name" content="magichear">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Klevenna">
-      <meta itemprop="description" content="你若林间溪水，萦绕白杨良辰">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Klevenna">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/study/2023/10/08/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-10-08 23:39:04" itemprop="dateCreated datePublished" datetime="2023-10-08T23:39:04+08:00">2023-10-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-09 14:27:59" itemprop="dateModified" datetime="2023-10-09T14:27:59+08:00">2023-10-09</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/study/log/page/2/">2</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/study/log/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>
@@ -897,7 +1072,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

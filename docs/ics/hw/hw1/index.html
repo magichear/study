@@ -21,29 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
 
-    <meta name="description" content="Homework 1T1 解  -144原码：1111 1111反码：1000 0000补码：1000 0001从而其八位二进制补码为：1000 0001 +81原码：0101 0001反码：0101 0001补码：0101 0001从而其八位二进制补码为：0101 0001   解  0011 0010符号位为 0，该数为正数，其原码也为 0011 0010，故其十进制表示为：+50  1111">
+    <meta name="description" content="Homework 1T1 解  -144原码：1111 1111反码：1000 0000补码：1000 0001从而其八位二进制补码为：1000 0001 +81原码：0101 0001反码：0101 0001补码：0101 0001从而其八位二进制补码为：0101 0001   解  0011 0010符号位为 0，该数为正数，其原码也为 0011 0010，故其十进制为：+50  1111 1">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Klevenna">
-<meta property="og:url" content="https://magichear.github.io/study/docs/ics/hw1/hw1.html">
+<meta property="og:url" content="https://magichear.github.io/study/docs/ics/hw/hw1/">
 <meta property="og:site_name" content="Klevenna">
-<meta property="og:description" content="Homework 1T1 解  -144原码：1111 1111反码：1000 0000补码：1000 0001从而其八位二进制补码为：1000 0001 +81原码：0101 0001反码：0101 0001补码：0101 0001从而其八位二进制补码为：0101 0001   解  0011 0010符号位为 0，该数为正数，其原码也为 0011 0010，故其十进制表示为：+50  1111">
+<meta property="og:description" content="Homework 1T1 解  -144原码：1111 1111反码：1000 0000补码：1000 0001从而其八位二进制补码为：1000 0001 +81原码：0101 0001反码：0101 0001补码：0101 0001从而其八位二进制补码为：0101 0001   解  0011 0010符号位为 0，该数为正数，其原码也为 0011 0010，故其十进制为：+50  1111 1">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://magichear.github.io/study/1.png">
-<meta property="og:image" content="https://magichear.github.io/study/2-1.png">
-<meta property="og:image" content="https://magichear.github.io/study/3.png">
-<meta property="og:image" content="https://magichear.github.io/study/4.png">
-<meta property="article:published_time" content="2023-09-28T00:49:20.183Z">
-<meta property="article:modified_time" content="2023-09-28T00:49:20.183Z">
+<meta property="og:image" content="https://magichear.github.io/study/.io//1.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//2-1-1.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//3.png">
+<meta property="og:image" content="https://magichear.github.io/study/.io//4-1.png">
+<meta property="article:published_time" content="2023-11-17T13:59:39.673Z">
+<meta property="article:modified_time" content="2023-09-28T00:49:20.188Z">
 <meta property="article:author" content="magichear">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://magichear.github.io/study/1.png">
+<meta name="twitter:image" content="https://magichear.github.io/study/.io//1.png">
 
 
-<link rel="canonical" href="https://magichear.github.io/study/docs/ics/hw1/hw1">
+<link rel="canonical" href="https://magichear.github.io/study/docs/ics/hw/hw1/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ics/hw1/hw1.html","path":"docs/ics/hw1/hw1.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ics/hw/hw1/","path":"docs/ics/hw/hw1/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title> | Klevenna
@@ -60,6 +60,15 @@
   <noscript>
     <link rel="stylesheet" href="/study/css/noscript.css">
   </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -98,7 +107,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
   </ul>
 </nav>
 
@@ -123,7 +132,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Homework-1"><span class="nav-number">1.</span> <span class="nav-text">Homework 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#T1"><span class="nav-number">1.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2"><span class="nav-number">1.2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T3"><span class="nav-number">1.3.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T4"><span class="nav-number">1.4.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T5"><span class="nav-number">1.5.</span> <span class="nav-text">T5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T8"><span class="nav-number">1.5.1.</span> <span class="nav-text">T8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T9"><span class="nav-number">1.5.2.</span> <span class="nav-text">T9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T10"><span class="nav-number">1.5.3.</span> <span class="nav-text">T10</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Homework-1"><span class="nav-number">1.</span> <span class="nav-text">Homework 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#T1"><span class="nav-number">1.1.</span> <span class="nav-text">T1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T2"><span class="nav-number">1.2.</span> <span class="nav-text">T2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T3"><span class="nav-number">1.3.</span> <span class="nav-text">T3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T4"><span class="nav-number">1.4.</span> <span class="nav-text">T4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T5"><span class="nav-number">1.5.</span> <span class="nav-text">T5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T6"><span class="nav-number">1.6.</span> <span class="nav-text">T6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T7"><span class="nav-number">1.6.1.</span> <span class="nav-text">T7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T8"><span class="nav-number">1.6.2.</span> <span class="nav-text">T8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T9"><span class="nav-number">1.6.3.</span> <span class="nav-text">T9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T10"><span class="nav-number">1.6.4.</span> <span class="nav-text">T10</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -136,7 +145,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/study/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -181,6 +190,64 @@
     </div>
 
     <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-图论"><a href="/study/docs/graph_theory/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>图论</a></li>
+
+
+      
+  <li class="menu-item menu-item-数电实验"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>数电实验</a></li>
+
+
+      
+  <li class="menu-item menu-item-常用快捷键"><a href="/study/docs/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>常用快捷键</a></li>
+
+
+      
+  <li class="menu-item menu-item-ics"><a href="/study/docs/ics/" rel="section"><i class="fa fa-puzzle-th fa-fw"></i>ICS</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-中文教材"><a href="https://magichear.github.io/study/docs/ics/ICS-ZH-CN.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>中文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-英文教材"><a href="https://magichear.github.io/study/docs/ics/Introduction-to-Computing-Systems.pdf" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>英文教材</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw"><a href="/study/docs/ics/hw/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw</a></li>
+
+
+      
+  <li class="menu-item menu-item-lab"><a href="/study/docs/ics/Lab/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Lab</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-hw1"><a href="/study/docs/ics/hw/hw1/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw1</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw2"><a href="/study/docs/ics/hw/hw2/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw2</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw3"><a href="/study/docs/ics/hw/hw3/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw3</a></li>
+
+
+      
+  <li class="menu-item menu-item-hw4"><a href="/study/docs/ics/hw/hw4/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>hw4</a></li>
+
+
+    </ul>
 
 
     
@@ -195,8 +262,8 @@
   <ul class="breadcrumb">
             <li><a href="/study/docs/">DOCS</a></li>
             <li><a href="/study/docs/ics/">ICS</a></li>
-            <li><a href="/study/docs/ics/hw1/">HW1</a></li>
-            <li>HW1</li>
+            <li><a href="/study/docs/ics/hw/">HW</a></li>
+          <li>HW1</li>
   </ul>
 </div>
 
@@ -214,15 +281,15 @@
 </li>
 <li><p>解</p>
 <ul>
-<li><p>0011 0010<br>符号位为 0，该数为正数，其原码也为 0011 0010，<br>故其十进制表示为：+50</p>
+<li><p>0011 0010<br>符号位为 0，该数为正数，其原码也为 0011 0010，故其十进制为：+50</p>
 </li>
-<li><p>1111 1101<br>符号位为 1，该数为负数<br>反码：1111 1100<br>原码：1000 0011<br>从而其十进制表示为：-3</p>
+<li><p>1111 1101<br>符号位为 1，该数为负数<br>反码：1111 1100<br>原码：1000 0011<br>从而其十进制为：-3</p>
 </li>
 </ul>
 </li>
 </ol>
 <h2 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h2><ol>
-<li><p>解<br>一个八位二进制补码可以表示的最小和最大的数用十进制分别表示为-128 和 127。</p>
+<li><p>解<br>一个八位二进制补码可以表示的最小和最大的数分别是-128 和 127。</p>
 <pre><code>- 对于最大的数，二进制表示为0111 1111，这在十进制中等于127。
 - 对于最小的数，二进制表示为1000 0000，这在十进制中等于-128。
 </code></pre>
@@ -236,21 +303,19 @@
 </li>
 </ol>
 <h2 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h2><p>$\qquad$解： -128</p>
-<pre><code>有负整数具有相同的2的补码表示和二进制（8位）的原码。这个数是-128。
+<pre><code>有负整数具有相同的2的补码表示和二进制（8位）的原始代码。这个数是-128。
 
 在8位二进制中，-128的原码和补码都是1000 0000。
 
 在原码中，最高位（符号位）为1表示这是一个负数，其余位（数值位）表示128。
 
-在补码中，负数的表示方法是取其绝对值的二进制表示，然后对其进行反码（即每一位取反），
-最后加1。
+在补码中，负数的表示方法是取其绝对值的二进制表示，然后对其进行反码（即每一位取反），最后加1。
 
 但是对于-128，其绝对值的二进制表示就是1000 0000，取反后仍然是1000 0000，
 加1后溢出，仍然是1000 0000。因此，-128的原码和补码在8位二进制中是相同的。
 </code></pre>
 <h2 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h2><ol>
 <li><p>解：</p>
-<p>$\qquad$当输入的数不是整数时，可能会出现题目中的情况。</p>
 <pre><code>在 C 语言中，int 类型的范围通常是 -2147483648 到 2147483647，
 如果输入的整数超过这个范围，那么可能会发生溢出，导致程序的行为变得不可预测。
 
@@ -267,7 +332,6 @@
 </code></pre>
 </li>
 <li><p>解：</p>
-<p>$\qquad$当输入正浮点数时，可能会出现与 1 中相同的情况。</p>
 <pre><code>这段代码有以下两点问题。
 
 首先，错误地使用了 &#39;%d&#39; 格式说明符来读取  &#39;unsigned int&#39;  类型的变量，
@@ -297,18 +361,40 @@
 <p>$$<br>\begin{aligned}<br>&amp;(-1)^{符号位} \times 2^{指数} \times 1.尾数\<br>&amp;&#x3D; (-1)^0 \times 2^{12} \times 1.00000000001000000001000\<br>&amp;&#x3D; 1 \times 4096 \times 1.000244140625\<br>&amp;&#x3D; 4096.999755859375<br>\end{aligned}<br>$$</p>
 </li>
 </ul>
+<h2 id="T6"><a href="#T6" class="headerlink" title="T6"></a>T6</h2><p>在 IEEE 32 位浮点数格式中，不考虑无穷大的情况下，可以表示的最小数是一个负数，其绝对值最大。在二进制中，这个数表示为</p>
+<pre><code>1 11111111 00000000000000000000000
+</code></pre>
+<p>第一位是符号位（1 表示负数），接下来的 8 位是指数（全为 1 表示最大可能值），最后的 23 位是小数部分（全为 0 表示小数部分的最小可能值）。</p>
+<p>在 IEEE 32 位浮点数格式中，可以表示的最小正数是一个接近于零的正数。在二进制中，这个数表示为：</p>
+<pre><code>0 00000000 00000000000000000000001
+</code></pre>
+<p>第一位是符号位（0 表示正数），接下来的 8 位是指数（全为 0 表示最小可能值），最后的 23 位是小数部分（只有最后一位是 1，表示小数部分的最小可能值）</p>
+<h3 id="T7"><a href="#T7" class="headerlink" title="T7"></a>T7</h3><p>在 IEEE 浮点数表示法和二进制补码表示法中，只有-2, -1, 0, 1, 2 这五个整数的表示方式是完全相同的。这是因为这些数的绝对值小于等于 2，所以它们的浮点表示可以在指数部分使用偏移量来表示 0，并且在小数部分不需要任何额外的位。</p>
+<p>我们可以通过以下的 C 语言程序来验证这个结论：</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdint.h&gt;
+
+int main() &#123;
+  for (int32_t i = -10; i &lt;= 10; ++i) &#123;
+    float f = i;
+    if (*(int32_t*)&amp;f == i) &#123;
+        printf(&quot;%d\n&quot;, i);
+    &#125;
+  &#125;
+return 0;
+&#125;
+</code></pre>
+<p>这个程序会打印出所有在-10 到 10 范围内的整数，这些整数的 IEEE 浮点数表示和它们的二进制补码表示是完全相同的。</p>
 <h3 id="T8"><a href="#T8" class="headerlink" title="T8"></a>T8</h3><ol>
 <li><p>填充得到的代码如下：</p>
 <pre><code>void swap(int *a, int *b) &#123;
 
     *a = *a ^ *b;   // 计算*a和*b的XOR，并将结果存储在*a中。
 
-    *b = *a ^ *b;   // 实际上计算的是(*a ^ *b) ^ *b，这简化后就是*a，
-                    // 并将结果存储在*b中
+    *b = *a ^ *b;   // 实际上计算的是(*a ^ *b) ^ *b，这简化后就是*a，并将结果存储在*b中
 
     *a = *a ^ *b;   // 将*a（仍然是*a ^ *b）和*b（现在是原来的*a）进行XOR运算，
-                    // 实际上计算的是(*a ^ *b) ^ *a，这简化后就是*b，
-                    // 并将结果存储在*a中
+                    // 实际上计算的是(*a ^ *b) ^ *a，这简化后就是*b，并将结果存储在*a中
 &#125;
 </code></pre>
 </li>
@@ -327,31 +413,32 @@
     &#125;
 &#125;
 </code></pre>
+</li>
+</ol>
 <ul>
 <li><p>首先，结合上一题，当 i 和 min 相等时，即要交换的两个数实际上是同一个数时，这个数会被置为 0。因为任何数与自身进行 XOR 操作的结果都是 0。<br>为解决这个问题，可以在调用 swap 函数之前检查 a[ i ] 和 a[ min ] 是否相等，如果相等则无需进行交换。</p>
 </li>
 <li><p>此外，应该使用 swap(&amp;a[i], &amp;a[min]) 而不是 swap(a + i, a + min)。这是因为 swap 函数需要的是两个整数的地址，而 &amp;a[i] 和 &amp;a[min] 正好提供了这两个地址。</p>
 </li>
 </ul>
-</li>
-</ol>
 <h3 id="T9"><a href="#T9" class="headerlink" title="T9"></a>T9</h3><ol>
 <li>y &#x3D; kx + b，则利用一个’x’与一个’+’即可</li>
 </ol>
-<p><img src="/study/1.png" alt="Alt text"></p>
+<p><img src="/study/.io//1.png" alt="Alt text"></p>
 <ol start="2">
 <li>p &#x3D; (m + n)(m -n)，则可以利用两个’+’与一个’x’构建电路</li>
 </ol>
-<p><img src="/study/2-1.png" alt="Alt text"></p>
+<p><img src="/study/.io//2-1-1.png" alt="Alt text"></p>
 <ol start="3">
 <li>利用勾股定理，$a^2 + b^2 &#x3D; c^2$</li>
 </ol>
-<p><img src="/study/3.png" alt="Alt text"></p>
+<p><img src="/study/.io//3.png" alt="Alt text"></p>
 <ol start="4">
 <li>计算$m$的加权平均值，由题图可得公式：$m &#x3D; v_1 \cdot w_1 + v_2 \cdot w_2$</li>
 </ol>
-<p><img src="/study/4.png" alt="Alt text"></p>
-<h3 id="T10"><a href="#T10" class="headerlink" title="T10"></a>T10</h3><ol>
+<p><img src="/study/.io//4-1.png" alt="Alt text"></p>
+<h3 id="T10"><a href="#T10" class="headerlink" title="T10"></a>T10</h3><p>We’d like to use binary to represent the following characters:<br>‘A’ to ‘Z’<br>‘a’ to ‘z’<br>‘0’ to ‘9’<br>2 special characters:’ ‘(space) and ‘.’</p>
+<ol>
 <li><p>How many bits do we need to represent a single character?</p>
 <pre><code>我们需要表示的字符总数是
 26（大写字母）+26（小写字母）+10（数字）+2（特殊字符）=64。
@@ -374,27 +461,27 @@
 - &#39;.&#39;：63
 
 那么，&quot;Hello world.&quot;的数值表示为：
-                7, 30, 37, 37, 40, 62, 48, 40, 43, 37, 29, 63
+                7, 30, 44, 44, 41, 62, 58, 41, 47, 44, 38, 63
 
 然后，我们将每个数值转换为 7 位二进制数：
 
 - 7（&#39;H&#39;） ：0000111
 - 30（&#39;e&#39;）：0011110
-- 37（&#39;l&#39;）：0100101
-- 37（&#39;l&#39;）：0100101
-- 40（&#39;o&#39;）：0101000
+- 44（&#39;l&#39;）：0101100
+- 44（&#39;l&#39;）：0101100
+- 41（&#39;o&#39;）：0101001
 - 62（&#39; &#39;）：0111110
-- 48（&#39;w&#39;）：0110000
-- 40（&#39;o&#39;）：0101000
-- 43（&#39;r&#39;）：0101011
-- 37（&#39;l&#39;）：0100101
-- 29（&#39;d&#39;）：0011101
+- 58（&#39;w&#39;）：0111010
+- 41（&#39;o&#39;）：0101001
+- 47（&#39;r&#39;）：0101111
+- 44（&#39;l&#39;）：0101100
+- 38（&#39;d&#39;）：0100110
 - 63（&#39;.&#39;）：0111111
 
 所以，&quot;Hello world.&quot;的二进制表示为：
 
-0000111 0011110 0100101 0100101 0101000 0111110 0110000
-0101000 0101011 0100101 0011101 0111111
+0000111 0011110 0101100 0101100 0101001 0111110 0111010 0101001 0101111 0101100
+0100110 0111111
 </code></pre>
 </li>
 </ol>
@@ -407,8 +494,8 @@
   <ul class="breadcrumb">
             <li><a href="/study/docs/">DOCS</a></li>
             <li><a href="/study/docs/ics/">ICS</a></li>
-            <li><a href="/study/docs/ics/hw1/">HW1</a></li>
-            <li>HW1</li>
+            <li><a href="/study/docs/ics/hw/">HW</a></li>
+          <li>HW1</li>
   </ul>
 
     
@@ -423,7 +510,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

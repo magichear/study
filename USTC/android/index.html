@@ -55,6 +55,15 @@
   <noscript>
     <link rel="stylesheet" href="/study/css/noscript.css">
   </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -93,7 +102,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
   </ul>
 </nav>
 
@@ -131,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/study/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -216,9 +225,9 @@
       
       
       <div class="post-body">
-          <article id=markdown class="line-numbers match-braces language-plain" style=opacity:1><h1 id=android-使用体验提升>🤖 Android 使用体验提升<a class=anchor href=#android-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C%E6%8F%90%E5%8D%87></a></h1>
-<h2 id=入门>🚪 入门<a class=anchor href=#%E5%85%A5%E9%97%A8></a></h2>
-<h3 id=第三方软件>第三方软件<a class=anchor href=#%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6></a></h3>
+          <article id="markdown" class="line-numbers match-braces language-plain" style="opacity:1"><h1 id="android-使用体验提升">🤖 Android 使用体验提升<a class="anchor" href="#android-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C%E6%8F%90%E5%8D%87"></a></h1>
+<h2 id="入门">🚪 入门<a class="anchor" href="#%E5%85%A5%E9%97%A8"></a></h2>
+<h3 id="第三方软件">第三方软件<a class="anchor" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E8%BD%AF%E4%BB%B6"></a></h3>
 <p>除了官方发布的软件，还有大量的第三方软件能给你带来<strong>不一样的体验</strong>。</p>
 <p>以下为个人使用的第三方软件：</p>
 <ul>
@@ -228,26 +237,26 @@
 <li>待补充…</li>
 </ul>
 <p>⚠️ 注意甄别软件安全性以及信誉，<em>不可信软件可能导致平台账号被盗/丢失</em></p>
-<h3 id=自定义快捷方式与-url-scheme>自定义快捷方式与 url scheme<a class=anchor href=#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E4%B8%8E-url-scheme></a></h3>
+<h3 id="自定义快捷方式与-url-scheme">自定义快捷方式与 url scheme<a class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E4%B8%8E-url-scheme"></a></h3>
 <p>通过自定义快捷方式，可以极大地<strong>提高常用操作的效率</strong>。比如说一般情况下你要打开微信扫一扫，需要点 3 次 (打开微信 - + - 扫一扫)，但是如果你添加了快捷方式，点击一下就够了。</p>
 <p>选项1: 酷安搜索“创建快捷方式”即可安装。该软件可以让你创建几乎任意软件任意 Activity 的快捷方式 (部分需要 root)</p>
 <p>选项2: 酷安搜索“Anywhere-”即可安装。该软件相较于前一个拥有更多功能，可以创建各类快捷方式 (Activity, URL, shell, Workflow)，支持更多工作方式 (普通, adb, root) 并且界面更美观</p>
-<h2 id=进阶---adb>🔭 进阶 - ADB<a class=anchor href=#%E8%BF%9B%E9%98%B6---adb></a></h2>
+<h2 id="进阶---adb">🔭 进阶 - ADB<a class="anchor" href="#%E8%BF%9B%E9%98%B6---adb"></a></h2>
 <p>ADB 是 "Android Debug Bridge" 的简称。通过它，你可以<strong>做到正常情况下做不到的事</strong>，例如用户层面卸载/冻结系统软件等。</p>
 <ol>
 <li>启用 ADB: 打开设置，找到系统版本一栏，多次点击，即可进入开发者模式 (不同手机可能具体操作不一样)。进入设置中多出来的开发者选项，启用 USB 调试</li>
-<li>电脑下载 <a href=https://developer.android.google.cn/studio/releases/platform-tools#downloads rel="noopener noreferrer" target=_blank class=external-link>platform-tools</a>, 解压至一个合适的路径 (最好不要有中文、空格和非常规符号)</li>
-<li>当前路径打开终端，输入 <code class=language-plain>adb</code> 并回车，若出现说明文档则 ADB 工具安装成功。</li>
+<li>电脑下载 <a href="https://developer.android.google.cn/studio/releases/platform-tools#downloads" rel="noopener noreferrer" target="_blank" class="external-link">platform-tools</a>, 解压至一个合适的路径 (最好不要有中文、空格和非常规符号)</li>
+<li>当前路径打开终端，输入 <code class="language-plain">adb</code> 并回车，若出现说明文档则 ADB 工具安装成功。</li>
 <li>(可选) 将当前路径添加到 PATH</li>
-<li>手机通过 USB 连至电脑，<code class=language-plain>adb devices</code> 可以看见多出了一个设备，手机上同意后即可执行 adb 命令，例如你可通过 <code class=language-plain>adb shell</code> 进入手机的 shell</li>
+<li>手机通过 USB 连至电脑，<code class="language-plain">adb devices</code> 可以看见多出了一个设备，手机上同意后即可执行 adb 命令，例如你可通过 <code class="language-plain">adb shell</code> 进入手机的 shell</li>
 </ol>
 <p>市面上有一批不需要 root，只需要 adb 权限就可以运行各类神奇功能的软件，比如说冰箱，黑阈等，可自行探索。</p>
 <p>⚠️ 注意，与权力伴随而来的是危险，拥有 ADB 权限的恶意软件<em>可以对系统造成可观的破坏</em>。</p>
-<h2 id=高级---root>🎓 高级 - Root<a class=anchor href=#%E9%AB%98%E7%BA%A7---root></a></h2>
-<p>Root 就是 Android 内的超级用户 <code class=language-plain>su</code>, 拥有了这个权限才是<strong>完全掌控了手机</strong>。相较于 ADB, 其权限更高，可以实现的操作更多，带来的风险也随之更大，门槛也更加高。</p>
+<h2 id="高级---root">🎓 高级 - Root<a class="anchor" href="#%E9%AB%98%E7%BA%A7---root"></a></h2>
+<p>Root 就是 Android 内的超级用户 <code class="language-plain">su</code>, 拥有了这个权限才是<strong>完全掌控了手机</strong>。相较于 ADB, 其权限更高，可以实现的操作更多，带来的风险也随之更大，门槛也更加高。</p>
 <p>当下主流的 Root 方案是购入小米手机/二手机，解锁 Bootloader 后刷入 Magisk 获取 Root 权限。随后一般会开启 Zygisk 后刷入 LSPosed (Zygisk), 至此便可以方便地安装各类模块以进一步自定义手机。</p>
 <p>⚠️ 注意，不规范操作或者授予恶意软件 Root 权限<em>可能导致手机系统损坏甚至于无法开机</em>！</p>
-<p><a href=http://magiskcn.com/ rel="noopener noreferrer" target=_blank class=external-link>Root 参考教程</a></p></article>
+<p><a href="http://magiskcn.com/" rel="noopener noreferrer" target="_blank" class="external-link">Root 参考教程</a></p></article>
 
       </div>
       
@@ -271,7 +280,7 @@
 
   <div class="copyright">
     &copy; 
-    <span itemprop="copyrightYear">2023</span>
+    <span itemprop="copyrightYear">2024</span>
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>

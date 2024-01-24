@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="指令LC-3（Little Computer 3）是一种教学用的计算机体系结构，它的指令集设计得相对简单，易于理解。下面是一些基本的 LC-3 指令：  ADD：这是一个加法指令，用于将两个数相加并将结果存储在一个寄存器中。格式为0001 DR SR1 0 00 SR2或0001 DR SR1 1 imm5，其中 DR 是目标寄存器，SR1 和 SR2 是源寄存器，imm5 是立即数。 ADD">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/ics/Lab/Lab1/Source/lab1.html">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="指令LC-3（Little Computer 3）是一种教学用的计算机体系结构，它的指令集设计得相对简单，易于理解。下面是一些基本的 LC-3 指令：  ADD：这是一个加法指令，用于将两个数相加并将结果存储在一个寄存器中。格式为0001 DR SR1 0 00 SR2或0001 DR SR1 1 imm5，其中 DR 是目标寄存器，SR1 和 SR2 是源寄存器，imm5 是立即数。 ADD">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-17T14:03:50.649Z">
+<meta property="article:modified_time" content="2023-10-31T16:09:35.258Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/ics/Lab/Lab1/Source/lab1">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ics/Lab/Lab1/Source/lab1.html","path":"docs/ics/Lab/Lab1/Source/lab1.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+
+  <script>
+  // 检查用户是否已经登录
+  if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    window.location.href = 'https://magichear.github.io/study/login/';
+  }
+</script>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li><li class="menu-item menu-item-login"><a href="/study/login/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>Login</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">任务</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/study/mgchrzio1@proton.me" title="E-Mail → mgchrzio1@proton.me" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/magichear/study/raw/gh-pages/wechatpay.png" title="https:&#x2F;&#x2F;github.com&#x2F;magichear&#x2F;study&#x2F;raw&#x2F;gh-pages&#x2F;wechatpay.png" rel="noopener" target="_blank">来点赞助吗</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/Lab/">LAB</a></li>
+            <li><a href="/study/docs/ics/Lab/Lab1/">LAB1</a></li>
+            <li><a href="/study/docs/ics/Lab/Lab1/Source/">SOURCE</a></li>
+            <li>LAB1</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>LC-3（Little Computer 3）是一种教学用的计算机体系结构，它的指令集设计得相对简单，易于理解。下面是一些基本的 LC-3 指令：</p>
+<ol>
+<li><p><strong>ADD</strong>：这是一个加法指令，用于将两个数相加并将结果存储在一个寄存器中。格式为<code>0001 DR SR1 0 00 SR2</code>或<code>0001 DR SR1 1 imm5</code>，其中 DR 是目标寄存器，SR1 和 SR2 是源寄存器，imm5 是立即数。</p>
+<pre><code>ADD   R2,R3,R4        ; R2  ← R3 + R4
+ADD   R2,R3,#7        ; R2  ← R3 + 7
+</code></pre>
+</li>
+<li><p><strong>AND</strong>：这是一个逻辑与指令，用于执行逻辑与操作并将结果存储在一个寄存器中。格式为<code>0101 DR SR1 0 00 SR2</code>或<code>0101 DR SR1 1 imm5</code>。</p>
+</li>
+<li><p><strong>BR</strong>：这是一个分支指令，用于根据条件标志（N，Z，P）改变程序的执行流。格式为<code>0000 nzp PCoffset9</code>，其中 nzp 表示负、零、正标志，PCoffset9 是 PC 相对偏移。</p>
+</li>
+<li><p><strong>JMP</strong>：这是一个跳转指令，用于无条件地改变程序的执行流。格式为<code>1100 000 SR 000000</code>，其中 SR 是源寄存器。</p>
+</li>
+<li><p><strong>JSR</strong>：这是一个跳转到子程序的指令。格式为<code>0100 1 PCoffset11</code>。</p>
+</li>
+<li><p><strong>JSRR</strong>：这是另一种跳转到子程序的指令。格式为<code>0100 000 SR 000000</code>。</p>
+</li>
+<li><p><strong>LD</strong>：这是一个加载指令，用于将内存中的值加载到寄存器中。格式为<code>0010 DR PCoffset9</code>。</p>
+</li>
+<li><p><strong>LDI</strong>：这是一个间接加载指令，用于通过间接地址将内存中的值加载到寄存器中。格式为<code>1010 DR PCoffset9</code>。</p>
+</li>
+<li><p><strong>LDR</strong>：这是一个基址+偏移量加载指令，用于将基址+偏移量地址处的内存值加载到寄存器中。格式为<code>0110 DR BaseR offset6</code>。</p>
+</li>
+<li><p><strong>LEA</strong>：这是一个加载有效地址指令，用于将有效地址加载到寄存器中。格式为<code>1110 DR PCoffset9</code>。</p>
+</li>
+<li><p><strong>NOT</strong>：这是一个逻辑非指令，用于对一个数进行逻辑非操作并将结果存储在一个寄存器中。格式为<code>1001 DR SR 111111</code>.</p>
+</li>
+<li><p><strong>ST</strong>：这是一个存储指令，用于将寄存器中的值存储到内存中。格式为<code>0011 SR PCoffset9</code>.</p>
+</li>
+<li><p><strong>STI</strong>：这是一个间接存储指令，用于通过间接地址将寄存器中的值存储到内存中。格式为<code>1011 SR PCoffset9</code>.</p>
+</li>
+<li><p><strong>STR</strong>：这是一个基址+偏移量存储指令，用于将寄存器中的值存储到基址+偏移量地址处的内存中。格式为<code>0111 SR BaseR offset6</code>.</p>
+</li>
+<li><p><strong>TRAP</strong>：这是一种软件中断指令，用于调用操作系统服务。格式为 <code>1111 0000 trapvect8</code>.</p>
+</li>
+</ol>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>LC-3 是一种简化的计算机架构，用于教学目的。它有一个小型的指令集，可以执行基本的操作，如加载（LD）、存储（ST）、加法（ADD）、逻辑运算（AND）、跳转（BR）等。</p>
+<p>在你的任务中，你需要写一个程序来计算给定数 n 的二进制表示或二进制补码中 0 的数量。这个程序需要满足以下条件：</p>
+<ol>
+<li>如果 n 是奇数，则计算 n 的二进制表示中 0 的数量。</li>
+<li>否则，计算 n 的负数的二进制补码中 0 的数量。</li>
+<li>n 的值将手动设置在 x3100 中。</li>
+<li>可以假设 n 是一个范围从 0x0000 到 0x7FFF 的正整数。</li>
+<li>需要计算整个 16 位。</li>
+<li>最终结果应存储在 x3102 中。</li>
+<li></li>
+</ol>
+<p>下面是一个可能的 LC-3 程序来完成这个任务：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">.ORIG x3000</span><br><span class="line">LD R0, x3100 ; Load n into R0</span><br><span class="line">AND R1, R1, #0 ; Clear R1</span><br><span class="line">AND R1, R0, #1 ; Check if n is odd</span><br><span class="line">BRz Even ; If n is even, go to Even</span><br><span class="line"></span><br><span class="line">Odd:</span><br><span class="line">NOT R2, R0 ; Invert bits of n</span><br><span class="line">ADD R2, R2, #1 ; Add 1 to get 2&#x27;s complement</span><br><span class="line">BRnzp CountZeros ; Go to CountZeros</span><br><span class="line"></span><br><span class="line">Even:</span><br><span class="line">AND R2, R2, #0 ; Clear R2</span><br><span class="line">ADD R2, R0, #0 ; Copy n to R2</span><br><span class="line"></span><br><span class="line">CountZeros:</span><br><span class="line">AND R3, R3, #0 ; Clear R3 (counter for zeros)</span><br><span class="line">AND R4, R4, #0 ; Clear R4 (counter for bits)</span><br><span class="line">CountLoop:</span><br><span class="line">AND R5, R5, #0 ; Clear R5</span><br><span class="line">AND R5, R2, #1 ; Get rightmost bit of n</span><br><span class="line">BRz IncrementZeros ; If rightmost bit is 0, increment counter for zeros</span><br><span class="line">ADD R4, R4, #1 ; Increment counter for bits</span><br><span class="line">BRz DoneCounting ; If we have counted 16 bits, we are done</span><br><span class="line">ADD R2, R2, #-1 ; Subtract 1 from n to shift bits to the right</span><br><span class="line">BRnzp CountLoop ; Repeat the loop</span><br><span class="line"></span><br><span class="line">IncrementZeros:</span><br><span class="line">ADD R3, R3, #1 ; Increment counter for zeros</span><br><span class="line">BRnzp CountLoop ; Continue the loop</span><br><span class="line"></span><br><span class="line">DoneCounting:</span><br><span class="line">ST R3, x3102 ; Store the count of zeros in x3102</span><br><span class="line"></span><br><span class="line">HALT</span><br><span class="line">.END</span><br></pre></td></tr></table></figure>
+
+<p>这个程序首先检查 n 是否为奇数。如果 n 为奇数，它将计算 n 的二进制补码中 0 的数量。否则，它将计算 n 本身二进制表示中 0 的数量。然后，它将结果存储在 x3102 中。</p>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/ics/">ICS</a></li>
+            <li><a href="/study/docs/ics/Lab/">LAB</a></li>
+            <li><a href="/study/docs/ics/Lab/Lab1/">LAB1</a></li>
+            <li><a href="/study/docs/ics/Lab/Lab1/Source/">SOURCE</a></li>
+            <li>LAB1</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
