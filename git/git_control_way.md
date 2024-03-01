@@ -34,3 +34,5 @@
   git config --global --unset http.proxy
   git config --global --unset https.proxy
 - 仍无法执行，请关闭 VPN 重试
+
+- git pull 将 github 上的仓库同步到本地
