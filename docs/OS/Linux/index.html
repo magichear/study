@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/study/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/study/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/study/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/study/images/logo.svg" color="#222">
+  <link rel="manifest" href="/study/manifest.json">
+
+<link rel="stylesheet" href="/study/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
+
+    <meta name="description" content="解压zip文件1unzip filename.zip  APTgpg-agent如果在运行 sudo apt update 时出现 gpg-agent 相关的错误，你可以尝试安装 gpg-agent 来解决问题。以下是如何安装 gpg-agent 的步骤：  安装 gpg-agent：  运行以下命令以安装 gpg-agent：1sudo apt-get install gpg-agent   *">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Klevenna">
+<meta property="og:url" content="https://magichear.github.io/study/docs/OS/Linux/">
+<meta property="og:site_name" content="Klevenna">
+<meta property="og:description" content="解压zip文件1unzip filename.zip  APTgpg-agent如果在运行 sudo apt update 时出现 gpg-agent 相关的错误，你可以尝试安装 gpg-agent 来解决问题。以下是如何安装 gpg-agent 的步骤：  安装 gpg-agent：  运行以下命令以安装 gpg-agent：1sudo apt-get install gpg-agent   *">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-14T15:37:20.198Z">
+<meta property="article:modified_time" content="2024-08-14T15:37:20.198Z">
+<meta property="article:author" content="magichear">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://magichear.github.io/study/docs/OS/Linux/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/OS/Linux/","path":"docs/OS/Linux/index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | Klevenna
+</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/study/css/noscript.css">
+  </noscript>
+
+  //<script>
+  // 检查用户是否已经登录
+  //if (!localStorage.getItem('loggedIn')) {
+    // 如果用户未登录，重定向他们到登录页面
+    //window.location.href = 'https://magichear.github.io/study/login/';
+  //}
+  //</script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/study/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Klevenna</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/study/" rel="section"><i class="fa fa-hearbeats fa-fw"></i>首页</a></li><li class="menu-item menu-item-个人主页"><a href="https://magichear.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>个人主页</a></li><li class="menu-item menu-item-ustc"><a href="/study/USTC/" rel="section"><i class="fa fa-flag fa-fw"></i>USTC</a></li><li class="menu-item menu-item-about"><a href="/study/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-archives"><a href="/study/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a></li><li class="menu-item menu-item-log"><a href="/study/log/" rel="section"><i class="fa fa-calendar fa-fw"></i>log</a></li><li class="menu-item menu-item-docs"><a href="/study/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B"><span class="nav-number">1.</span> <span class="nav-text">解压</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#zip%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">zip文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#APT"><span class="nav-number">2.</span> <span class="nav-text">APT</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#gpg-agent"><span class="nav-number">2.1.</span> <span class="nav-text">gpg-agent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#APT-%E7%9A%84%E5%8D%B8%E8%BD%BD%E7%AE%A1%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">APT 的卸载管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%81%E7%9B%98%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%88%A0%E9%99%A4%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86"><span class="nav-number">2.2.1.</span> <span class="nav-text">磁盘文件无法删除怎么处理</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">magichear</p>
+  <div class="site-description" itemprop="description">你若林间溪水，萦绕白杨良辰</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/study/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/magichear" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;magichear" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/study/mgchrzio1@proton.me" title="E-Mail → mgchrzio1@proton.me" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.weibo.com/u/6343741774" title="Weibo → https:&#x2F;&#x2F;www.weibo.com&#x2F;u&#x2F;6343741774" rel="noopener me" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://github.com/magichear/study/raw/gh-pages/wechatpay.png" title="https:&#x2F;&#x2F;github.com&#x2F;magichear&#x2F;study&#x2F;raw&#x2F;gh-pages&#x2F;wechatpay.png" rel="noopener" target="_blank">来点赞助吗</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner page posts-expand">
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
+
+
+      
+  <li class="menu-item menu-item-手搓cpu"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>手搓CPU</a></li>
+
+
+      
+  <li class="menu-item menu-item-编辑"><a href="/study/docs/bianji/" rel="section"><i class="fa fa-flag fa-fw"></i>编辑</a></li>
+
+
+      
+  <li class="menu-item menu-item-git"><a href="/study/docs/Git/" rel="section"><i class="fa fa-flag fa-fw"></i>Git</a></li>
+
+
+      
+  <li class="menu-item menu-item-os"><a href="/study/docs/OS/" rel="section"><i class="fa fa-flag fa-fw"></i>OS</a></li>
+
+
+      
+  <li class="menu-item menu-item-前端"><a href="/study/docs/Front/" rel="section"><i class="fa fa-flag fa-fw"></i>前端</a></li>
+
+
+    </ul>
+    <ul class="sub-menu menu">
+      
+  <li class="menu-item menu-item-windows"><a href="/study/docs/OS/Windows/" rel="section"><i class="fa fa-flag fa-fw"></i>Windows</a></li>
+
+
+      
+  <li class="menu-item menu-item-linux"><a href="/study/docs/OS/Linux/" rel="section"><i class="fa fa-flag fa-fw"></i>Linux</a></li>
+
+
+    </ul>
+
+
+    
+    
+    
+    <div class="post-block" lang="zh-CN"><header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta-container">
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/OS/">OS</a></li>
+          <li>LINUX</li>
+  </ul>
+</div>
+
+</header>
+
+      
+      
+      <div class="post-body">
+          <h1 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h1><h2 id="zip文件"><a href="#zip文件" class="headerlink" title="zip文件"></a><code>zip</code>文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip filename.zip</span><br></pre></td></tr></table></figure>
+
+<h1 id="APT"><a href="#APT" class="headerlink" title="APT"></a>APT</h1><h2 id="gpg-agent"><a href="#gpg-agent" class="headerlink" title="gpg-agent"></a>gpg-agent</h2><p>如果在运行 <code>sudo apt update</code> 时出现 <code>gpg-agent</code> 相关的错误，你可以尝试安装 <code>gpg-agent</code> 来解决问题。以下是如何安装 <code>gpg-agent</code> 的步骤：</p>
+<ol>
+<li><p><strong>安装 gpg-agent</strong>：</p>
+<ul>
+<li>运行以下命令以安装 <code>gpg-agent</code>：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gpg-agent</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>**重新运行 <code>sudo apt update</code>**：</p>
+<ul>
+<li>安装完 <code>gpg-agent</code> 后，再次运行 <code>sudo apt update</code>，看看是否仍然出现相同的错误。</li>
+</ul>
+</li>
+</ol>
+<p>当在 Ubuntu 系统上执行 <code>sudo apt update</code> 命令时，如果出现“由于没有公钥，无法验证下列签名”的错误，你可以按照以下步骤解决（以<code>yarn</code>的安装为例）：</p>
+<ol>
+<li><p><strong>添加 Yarn 的 GPG 密钥</strong>：</p>
+<ul>
+<li>运行以下命令以添加 Yarn 的 GPG 密钥：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>添加 Yarn 软件源</strong>：</p>
+<ul>
+<li>运行以下命令以添加 Yarn 的软件源：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb https://dl.yarnpkg.com/debian/ stable main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/yarn.list</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>更新软件包列表</strong>：</p>
+<ul>
+<li>运行以下命令以刷新软件包列表：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>安装 Yarn</strong>：</p>
+<ul>
+<li>运行以下命令以安装 Yarn：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install yarn</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h2 id="APT-的卸载管理"><a href="#APT-的卸载管理" class="headerlink" title="APT 的卸载管理"></a>APT 的卸载管理</h2><p>在调用<code>sudo apt remove xxx</code>之后，请顺手使用<code>sudo apt autoremove</code>清理遗留，否则会影响到下次安装</p>
+<h3 id="磁盘文件无法删除怎么处理"><a href="#磁盘文件无法删除怎么处理" class="headerlink" title="磁盘文件无法删除怎么处理"></a>磁盘文件无法删除怎么处理</h3><p>在删除储存卡中的文件夹时，出现以下报错：</p>
+<pre><code>一个意外错误使你无法删除该文件夹。错误 0x80070570: 文件或目录损坏且无法读取
+</code></pre>
+<ol>
+<li><p><strong>运行 CHKDSK 命令</strong>：</p>
+<ul>
+<li>按下 <code>Win + R</code> 键，打开“运行”对话框，然后输入 <code>cmd</code> 并按回车。</li>
+<li>在命令提示符中，输入 <code>chkdsk H: /f</code>（注意替换 <code>H:</code> 为您的磁盘名称）。</li>
+<li>这将检查并修复文件系统结构。如果收到消息“由于卷有问题而无法完成操作”，请尝试输入 <code>chkdsk H: /f /r /x</code> 以删除写保护。</li>
+<li>输入 <code>exit</code> 关闭命令提示符，然后尝试删除文件。</li>
+</ul>
+</li>
+<li><p><strong>更改注册表设置</strong>：</p>
+<ul>
+<li>按下 <code>Win + R</code> 键，输入 <code>regedit</code> 并按回车。</li>
+<li>转到路径：<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\StorageDevicePolicies</code>。</li>
+<li>双击 <code>WriteProtect</code>，将 <code>数值数据</code> 从 1 更改为 0。</li>
+<li>重启电脑，然后尝试从 SD 卡删除文件。</li>
+</ul>
+</li>
+</ol>
+<p>实测第一种方法可以完美解决问题</p>
+<p>文件（夹）无法删除未必代表磁盘出现坏块，本人在执行上述操作后检查出来的磁盘坏块依然是 0kB，文件夹可以正常删除</p>
+
+      </div>
+      
+      
+      
+    </div>
+  <ul class="breadcrumb">
+            <li><a href="/study/docs/">DOCS</a></li>
+            <li><a href="/study/docs/OS/">OS</a></li>
+          <li>LINUX</li>
+  </ul>
+
+    
+    
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">magichear</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/study/js/comments.js"></script><script src="/study/js/utils.js"></script><script src="/study/js/motion.js"></script><script src="/study/js/schemes/muse.js"></script><script src="/study/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
