@@ -1,3 +1,5 @@
+https://magichear.github.io/study/docs/Front/Hexo/
+https://magichear.github.io/study/docs/OS/Windows/
 https://magichear.github.io/study/docs/plugin/copilot/
 https://magichear.github.io/study/docs/plugin/
 https://magichear.github.io/study/
@@ -11,7 +13,6 @@ https://magichear.github.io/study/docs/bianji/markdown/
 https://magichear.github.io/study/docs/Front/Node/
 https://magichear.github.io/study/docs/Front/yarn/
 https://magichear.github.io/study/docs/Front/npm/
-https://magichear.github.io/study/docs/Front/Hexo/
 https://magichear.github.io/study/docs/Git/
 https://magichear.github.io/study/docs/digital_experiment/
 https://magichear.github.io/study/USTC/
