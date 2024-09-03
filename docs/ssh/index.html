@@ -21,24 +21,24 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"magichear.github.io","root":"/study/","images":"/study/images","scheme":"Mist","darkmode":true,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/study/js/config.js"></script>
 
-    <meta name="description" content="你若林间溪水，萦绕白杨良辰">
+    <meta name="description" content="如何配置 ssh最重要的事： 在本地登录！！不然无法 push 成功huggingface： pip install huggingface_hub[cli] huggingface-cli login  常规配置步骤要在 Hugging Face 上配置 SSH，可以按照以下步骤进行：  检查现有 SSH 密钥：  在终端中输入 ls ~&#x2F;.ssh，查看是否已有 SSH 密钥文件（如 id_rs">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Klevenna">
-<meta property="og:url" content="https://magichear.github.io/study/docs/bianji/">
+<meta property="og:url" content="https://magichear.github.io/study/docs/ssh/">
 <meta property="og:site_name" content="Klevenna">
-<meta property="og:description" content="你若林间溪水，萦绕白杨良辰">
+<meta property="og:description" content="如何配置 ssh最重要的事： 在本地登录！！不然无法 push 成功huggingface： pip install huggingface_hub[cli] huggingface-cli login  常规配置步骤要在 Hugging Face 上配置 SSH，可以按照以下步骤进行：  检查现有 SSH 密钥：  在终端中输入 ls ~&#x2F;.ssh，查看是否已有 SSH 密钥文件（如 id_rs">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-14T15:29:48.040Z">
-<meta property="article:modified_time" content="2024-08-14T15:29:44.010Z">
+<meta property="article:published_time" content="2024-09-03T03:24:00.569Z">
+<meta property="article:modified_time" content="2024-09-03T03:24:00.569Z">
 <meta property="article:author" content="magichear">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://magichear.github.io/study/docs/bianji/">
+<link rel="canonical" href="https://magichear.github.io/study/docs/ssh/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/bianji/","path":"docs/bianji/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://magichear.github.io/study/docs/ssh/","path":"docs/ssh/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title> | Klevenna
@@ -113,7 +113,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -126,6 +126,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE-ssh"><span class="nav-number">1.</span> <span class="nav-text">如何配置 ssh</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E9%87%8D%E8%A6%81%E7%9A%84%E4%BA%8B%EF%BC%9A-%E5%9C%A8%E6%9C%AC%E5%9C%B0%E7%99%BB%E5%BD%95%EF%BC%81%EF%BC%81%E4%B8%8D%E7%84%B6%E6%97%A0%E6%B3%95-push-%E6%88%90%E5%8A%9F"><span class="nav-number">1.1.</span> <span class="nav-text">最重要的事： 在本地登录！！不然无法 push 成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%84%E9%85%8D%E7%BD%AE%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.</span> <span class="nav-text">常规配置步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">大文件处理</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -183,50 +184,6 @@
     </div>
 
     <div class="main-inner page posts-expand">
-    <ul class="sub-menu menu">
-      
-  <li class="menu-item menu-item-算法"><a href="/study/docs/algorithm/" rel="section"><i class="fa fa-tags fa-fw"></i>算法</a></li>
-
-
-      
-  <li class="menu-item menu-item-手搓cpu"><a href="/study/docs/digital_experiment/" rel="section"><i class="fa fa-puzzle-piece fa-fw"></i>手搓CPU</a></li>
-
-
-      
-  <li class="menu-item menu-item-编辑"><a href="/study/docs/bianji/" rel="section"><i class="fa fa-flag fa-fw"></i>编辑</a></li>
-
-
-      
-  <li class="menu-item menu-item-git"><a href="/study/docs/Git/" rel="section"><i class="fa fa-flag fa-fw"></i>Git</a></li>
-
-
-      
-  <li class="menu-item menu-item-网络"><a href="/study/docs/Web/" rel="section"><i class="fa fa-flag fa-fw"></i>网络</a></li>
-
-
-      
-  <li class="menu-item menu-item-插件"><a href="/study/docs/plugin/" rel="section"><i class="fa fa-flag fa-fw"></i>插件</a></li>
-
-
-      
-  <li class="menu-item menu-item-os"><a href="/study/docs/OS/" rel="section"><i class="fa fa-flag fa-fw"></i>OS</a></li>
-
-
-      
-  <li class="menu-item menu-item-前端"><a href="/study/docs/Front/" rel="section"><i class="fa fa-flag fa-fw"></i>前端</a></li>
-
-
-    </ul>
-    <ul class="sub-menu menu">
-      
-  <li class="menu-item menu-item-快捷键"><a href="/study/docs/bianji/shortcut/" rel="section"><i class="fa fa-flag fa-fw"></i>快捷键</a></li>
-
-
-      
-  <li class="menu-item menu-item-markdown"><a href="/study/docs/bianji/markdown/" rel="section"><i class="fa fa-flag fa-fw"></i>Markdown</a></li>
-
-
-    </ul>
 
 
     
@@ -240,7 +197,7 @@
 <div class="post-meta-container">
   <ul class="breadcrumb">
             <li><a href="/study/docs/">DOCS</a></li>
-          <li>编辑</li>
+          <li>SSH</li>
   </ul>
 </div>
 
@@ -249,7 +206,49 @@
       
       
       <div class="post-body">
-          
+          <h1 id="如何配置-ssh"><a href="#如何配置-ssh" class="headerlink" title="如何配置 ssh"></a>如何配置 ssh</h1><h2 id="最重要的事：-在本地登录！！不然无法-push-成功"><a href="#最重要的事：-在本地登录！！不然无法-push-成功" class="headerlink" title="最重要的事： 在本地登录！！不然无法 push 成功"></a>最重要的事： 在本地登录！！不然无法 push 成功</h2><p><code>huggingface</code>：</p>
+<pre><code>pip install huggingface_hub[cli]
+huggingface-cli login
+</code></pre>
+<h2 id="常规配置步骤"><a href="#常规配置步骤" class="headerlink" title="常规配置步骤"></a>常规配置步骤</h2><p>要在 Hugging Face 上配置 SSH，可以按照以下步骤进行：</p>
+<ol>
+<li><p><strong>检查现有 SSH 密钥</strong>：</p>
+<ul>
+<li>在终端中输入 <code>ls ~/.ssh</code>，查看是否已有 SSH 密钥文件（如 <code>id_rsa.pub</code>、<code>id_ecdsa.pub</code> 或 <code>id_ed25519.pub</code>）。</li>
+</ul>
+</li>
+<li><p><strong>生成新的 SSH 密钥对（如果没有现有密钥）</strong>：</p>
+<ul>
+<li>使用以下命令生成新的 SSH 密钥对：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your.email@example.com&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>按提示输入文件保存位置和密码（建议设置密码以增加安全性）。</li>
+</ul>
+</li>
+<li><p><strong>将新密钥添加到 SSH 代理</strong>：</p>
+<ul>
+<li>使用以下命令将新生成的密钥添加到 SSH 代理：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_ed25519</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>将公钥添加到 Hugging Face 账户</strong>：</p>
+<ul>
+<li>登录到 Hugging Face 账户，导航到账户设置页面的 SSH 密钥部分。</li>
+<li>点击“Add SSH key”按钮，输入密钥名称（如“Personal computer”），并将公钥内容粘贴到相应区域。公钥文件通常位于 <code>~/.ssh/id_ed25519.pub</code>。</li>
+</ul>
+</li>
+<li><p><strong>测试 SSH 连接</strong>：</p>
+<ul>
+<li>在终端中运行以下命令测试连接（<code>huggingface</code>）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@hf.co</span><br></pre></td></tr></table></figure></li>
+<li>如果看到欢迎消息，说明配置成功。</li>
+<li>也可能出现以下信息<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">PS D:\&gt; ssh -T git@hf.co</span><br><span class="line">The authenticity of host <span class="string">&#x27;hf.co (34.198.14.237)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">ED25519 key fingerprint is xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span></span><br><span class="line"><span class="string">This key is not known by any other names</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no/[fingerprint])? y</span></span><br><span class="line"><span class="string">Please type &#x27;</span><span class="built_in">yes</span><span class="string">&#x27;, &#x27;</span>no<span class="string">&#x27; or the fingerprint: yes</span></span><br><span class="line"><span class="string">Warning: Permanently added &#x27;</span>hf.co<span class="string">&#x27; (ED25519) to the list of known hosts.</span></span><br><span class="line"><span class="string">Enter passphrase for key &#x27;</span>C:\Users\Wanging/.ssh/id_ed25519<span class="string">&#x27;:</span></span><br></pre></td></tr></table></figure>
+这是确认信息，输入密码确定之后就可以看到欢迎信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="大文件处理"><a href="#大文件处理" class="headerlink" title="大文件处理"></a>大文件处理</h2><ul>
+<li>禁用<code>Git LFS</code>锁定 API：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config lfs.https://hf.co/REPO.git/info/lfs.  locksverify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+将其中的<code>REPO</code>改为自己的仓库地址</li>
+<li>配置<code>LFS</code><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git lfs install</span><br><span class="line">git lfs track <span class="string">&quot;*.bin&quot;</span>  <span class="comment"># 根据你的大文件类型调整</span></span><br><span class="line">git add .gitattributes</span><br><span class="line">git add &lt;large_files&gt;</span><br><span class="line">git commit -m <span class="string">&quot;Track large files with Git LFS&quot;</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure></li>
+</ul>
+
       </div>
       
       
@@ -257,7 +256,7 @@
     </div>
   <ul class="breadcrumb">
             <li><a href="/study/docs/">DOCS</a></li>
-          <li>编辑</li>
+          <li>SSH</li>
   </ul>
 
     

@@ -1,3 +1,5 @@
+https://magichear.github.io/study/docs/Web/
+https://magichear.github.io/study/docs/ssh/
 https://magichear.github.io/study/docs/Front/Hexo/
 https://magichear.github.io/study/docs/OS/Windows/
 https://magichear.github.io/study/docs/plugin/copilot/
